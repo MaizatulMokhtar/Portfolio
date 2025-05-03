@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Example: Importing Inter and Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Personal Portfolio</title>
+  </head>
+  <body class="bg-black text-white" style="font-family: 'Poppins', sans-serif">
+    <div class="min-h-screen flex flex-col">
+      <!-- Navbar -->
+      <header
+        class="bg-black shadow-md py-4 px-6 flex items-center justify-between"
+      >
+        <span class="text-2xl font-bold text-blue-700">Maizatul</span>
+        <nav class="space-x-6 text-gray-300 font-medium" id="navbar">
+          <button
+            class="tablink hover:text-blue-700 transition active"
+            data-tab="home"
+          >
+            Home
+          </button>
+          <button
+            class="tablink hover:text-blue-700 transition"
+            data-tab="education"
+          >
+            Education
+          </button>
+          <button
+            class="tablink hover:text-blue-700 transition"
+            data-tab="experiences"
+          >
+            Experiences
+          </button>
+          <button
+            class="tablink hover:text-blue-700 transition"
+            data-tab="skills"
+          >
+            Skills
+          </button>
+          <button
+            class="tablink hover:text-blue-700 transition"
+            data-tab="projects"
+          >
+            Projects
+          </button>
+          <button
+            class="tablink hover:text-blue-700 transition"
+            data-tab="contact"
+          >
+            Contact
+          </button>
+        </nav>
+      </header>
+
+      <!-- Main Content Area -->
+      <main class="flex flex-col md:flex-row">
+        <!-- Left Image -->
+        <div class="md:w-1/2 flex items-center justify-center py-10">
+          <img
+            src="home.jpg"
+            alt="Profile"
+            class="w-[28rem] h-[28rem] md:w-[32rem] md:h-[32rem] rounded-full object-cover border-4 border-black shadow-lg"
+          />
+        </div>
+
+        <!-- Right Content (Tabs) -->
+        <div class="md:w-1/2 px-6 py-10">
+          <!-- Home Tab -->
+          <section id="home" class="tab-content">
+            <div class="home-content text-center md:text-left max-w-xl mt-20">
+              <h1 class="text-3xl md:text-5xl font-bold mb-3">
+                Hi, it's <span class="text-blue-700">Maizatul</span>
+              </h1>
+              <h3 class="typing-text text-xl md:text-2xl font-bold mb-4">
+                I'm a
+                <span class="text-blue-700">Junior Full Stack Developer</span>
+              </h3>
+              <p class="mb-6">
+                I’m a junior full stack developer skilled in HTML, CSS,
+                JavaScript, PHP, and Laravel, with academic experience in Java
+                and C++. Certified in CPRE-FL and CTFL, I’m passionate about
+                software quality and building responsive, user-friendly
+                websites. I’m adaptable, detail-oriented, and thrive in
+                collaborative environments where I can learn and contribute.
+              </p>
+              <div class="social-icons">
+                <div class="flex justify-start gap-6 mt-6 mb-6">
+                  <!-- LinkedIn -->
+                  <a
+                    href="https://www.linkedin.com/in/maizatul-mokhtar-1135aa295"
+                    target="_blank"
+                    class="w-12 h-12 rounded-full bg-blue-200 text-white flex items-center justify-center shadow-md hover:scale-110 transition"
+                  >
+                    <img
+                      src="assets/img/linkedin.svg"
+                      alt="LinkedIn"
+                      class="w-6 h-6"
+                    />
+                  </a>
+
+                  <!-- Gmail -->
+                  <a
+                    href="mailto:maizatulmokhtar85@gmail.com"
+                    class="w-12 h-12 rounded-full bg-white text-white flex items-center justify-center shadow-md hover:scale-110 transition"
+                  >
+                    <img
+                      src="assets/img/gmail.svg"
+                      alt="InstGmailagram"
+                      class="w-6 h-6"
+                    />
+                  </a>
+
+                  <!-- Instagram -->
+                  <a
+                    href="https://instagram.com/myzatul.mokhtar"
+                    target="_blank"
+                    class="w-12 h-12 rounded-full bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 text-white flex items-center justify-center shadow-md hover:scale-110 transition"
+                  >
+                    <img
+                      src="assets/img/instagram.svg"
+                      alt="Instagram"
+                      class="w-6 h-6"
+                    />
+                  </a>
+                </div>
+
+                <!-- Contact me -->
+                <button
+                  data-tab="contact"
+                  class="inline-block bg-black text-white px-6 py-2 rounded-full border-2 border-blue-700 hover:bg-blue-700 transition"
+                >
+                  Contact Me
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Education Tab -->
+          <section
+            id="education"
+            class="tab-content hidden px-6 py-10 max-w-3xl mx-auto"
+          >
+            <h2 class="text-3xl font-bold text-blue-700 mb-6">Education</h2>
+
+            <div class="space-y-8">
+              <!-- Timeline Item Template -->
+              <div
+                class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group"
+              >
+                <!-- Timeline Dot -->
+                <div
+                  class="absolute w-3 h-3 bg-blue-700 rounded-full left-[-7px] top-1/2 transform -translate-y-1/2"
+                ></div>
+
+                <!-- Ellipsis Dropdown -->
+                <div class="absolute top-3 right-3 z-10">
+                  <button
+                    onclick="toggleDropdown(this)"
+                    class="text-gray-400 hover:text-white text-2xl leading-none"
+                  >
+                    &#x22EE;
+                  </button>
+                  <div
+                    class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2"
+                  >
+                    <button
+                      onclick="openModal('coursesModal')"
+                      class="block px-4 py-2 hover:bg-blue-700 w-full text-left"
+                    >
+                      See Courses
+                    </button>
+                    <button
+                      onclick="openModal('certModal')"
+                      class="block px-4 py-2 hover:bg-blue-700 w-full text-left"
+                    >
+                      See Certificate
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Content -->
+                <h3 class="text-xl font-semibold text-white mb-1">
+                  SPM – Science Stream
+                </h3>
+                <div class="flex justify-between text-sm text-gray-400">
+                  <span>SMK Bandar Tasik Puteri</span>
+                  <span>2014 - 2018</span>
+                </div>
+                <p class="mt-2 text-sm text-blue-400">SPM: 2A-</p>
+              </div>
+
+              <!-- Matriculation -->
+              <div
+                class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group"
+              >
+                <div
+                  class="absolute w-3 h-3 bg-blue-700 rounded-full left-[-7px] top-1/2 transform -translate-y-1/2"
+                ></div>
+
+                <div class="absolute top-3 right-3 z-10">
+                  <button
+                    onclick="toggleDropdown(this)"
+                    class="text-gray-400 hover:text-white text-2xl leading-none"
+                  >
+                    &#x22EE;
+                  </button>
+                  <div
+                    class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2"
+                  >
+                    <button
+                      onclick="openModal('coursesModal')"
+                      class="block px-4 py-2 hover:bg-blue-700 w-full text-left"
+                    >
+                      See Courses
+                    </button>
+                    <button
+                      onclick="openModal('certModal')"
+                      class="block px-4 py-2 hover:bg-blue-700 w-full text-left"
+                    >
+                      See Certificate
+                    </button>
+                  </div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-white mb-1">
+                  Matriculation in Science and Computer
+                </h3>
+                <div class="flex justify-between text-sm text-gray-400">
+                  <span>College Matriculation of Pahang (KmPh)</span>
+                  <span>2019 - 2020</span>
+                </div>
+                <p class="mt-2 text-sm text-blue-400">CGPA: 2.98</p>
+              </div>
+
+              <!-- Degree -->
+              <div
+                class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group"
+              >
+                <div
+                  class="absolute w-3 h-3 bg-blue-700 rounded-full left-[-7px] top-1/2 transform -translate-y-1/2"
+                ></div>
+
+                <div class="absolute top-3 right-3 z-10">
+                  <button
+                    onclick="toggleDropdown(this)"
+                    class="text-gray-400 hover:text-white text-2xl leading-none"
+                  >
+                    &#x22EE;
+                  </button>
+                  <div
+                    class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2"
+                  >
+                    <button
+                      onclick="openModal('coursesModal')"
+                      class="block px-4 py-2 hover:bg-blue-700 w-full text-left"
+                    >
+                      See Courses
+                    </button>
+                    <button
+                      onclick="openModal('certModal')"
+                      class="block px-4 py-2 hover:bg-blue-700 w-full text-left"
+                    >
+                      See Certificate
+                    </button>
+                  </div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-white mb-1">
+                  Bachelor of Information Systems Engineering
+                </h3>
+                <div class="flex justify-between text-sm text-gray-400">
+                  <span>Universiti Teknologi MARA (UiTM)</span>
+                  <span>2020 - 2024</span>
+                </div>
+                <p class="mt-2 text-sm text-blue-400">CGPA: 3.25</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="experiences" class="tab-content hidden">
+            <div class="exp-content text-center md:text-left max-w-xl mt-20">
+              <h2 class="text-2xl font-semibold mb-4">Experiences</h2>
+              <p>Your work experiences go here...</p>
+            </div>
+          </section>
+
+          <section id="skills" class="tab-content hidden">
+            <div class="skill-content text-center md:text-left max-w-xl mt-20">
+              <h2 class="text-2xl font-semibold mb-4">Skills</h2>
+              <p>Skills and technologies...</p>
+            </div>
+          </section>
+
+          <section id="projects" class="tab-content hidden">
+            <div
+              class="project-content text-center md:text-left max-w-xl mt-20"
+            >
+              <h2 class="text-2xl font-semibold mb-4">Projects</h2>
+              <p>Project descriptions...</p>
+            </div>
+          </section>
+
+          <section id="contact" class="tab-content hidden">
+            <div
+              class="contact-content text-center md:text-left max-w-xl mt-20"
+            >
+              <h2 class="text-2xl font-semibold mb-4">Contact</h2>
+              <p>Contact me at maizatulmokhtar85@gmail.com</p>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- JavaScript for Tabs -->
+    <script>
+      const tabLinks = document.querySelectorAll(".tablink");
+      const tabContents = document.querySelectorAll(".tab-content");
+
+      tabLinks.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active class from all buttons
+          tabLinks.forEach((b) =>
+            b.classList.remove("text-blue-700", "font-bold", "active")
+          );
+          // Add active class to clicked button
+          btn.classList.add("text-blue-700", "font-bold", "active");
+
+          // Hide all content
+          tabContents.forEach((content) => content.classList.add("hidden"));
+          // Show clicked tab content
+          document.getElementById(btn.dataset.tab).classList.remove("hidden");
+        });
+      });
+    </script>
+    <!-- JS: Dropdown toggle -->
+    <script>
+      function toggleDropdown(btn) {
+        const menu = btn.nextElementSibling;
+        const allMenus = document.querySelectorAll(".dropdown-menu");
+        allMenus.forEach((m) => m !== menu && m.classList.add("hidden"));
+        menu.classList.toggle("hidden");
+      }
+
+      window.addEventListener("click", (e) => {
+        if (
+          !e.target.matches("button") &&
+          !e.target.closest(".dropdown-menu")
+        ) {
+          document
+            .querySelectorAll(".dropdown-menu")
+            .forEach((menu) => menu.classList.add("hidden"));
+        }
+      });
+
+      function openModal(modalId) {
+        // Your modal display logic
+        alert(`Open modal: ${modalId}`);
+      }
+    </script>
+  </body>
+</html>
