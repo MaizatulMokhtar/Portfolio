@@ -7,6 +7,8 @@
 
   <!-- Script -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
   <!-- Example: Importing Inter and Poppins -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;700&display=swap"
@@ -19,7 +21,7 @@
   <div class="min-h-screen flex flex-col">
     <!-- Navbar -->
     <header class="bg-black shadow-md py-4 px-6 flex items-center justify-between">
-      <span class="text-2xl font-bold text-blue-700">Maizatul</span>
+      <span class="text-2xl font-bold text-blue-700">Maizatul Mokhtar</span>
       <nav class="space-x-6 text-gray-300 font-medium" id="navbar">
         <button class="tablink hover:text-blue-700 transition active" data-tab="home">
           Home
@@ -29,9 +31,6 @@
         </button>
         <button class="tablink hover:text-blue-700 transition" data-tab="experiences">
           Experiences
-        </button>
-        <button class="tablink hover:text-blue-700 transition" data-tab="skills">
-          Skills
         </button>
         <button class="tablink hover:text-blue-700 transition" data-tab="projects">
           Projects
@@ -43,15 +42,15 @@
     </header>
 
     <!-- Main Content Area -->
-    <main class="flex flex-col md:flex-row">
-      <!-- Left Image -->
-      <div class="md:w-1/2 flex items-center justify-center py-10">
-        <img src="home.jpg" alt="Profile"
-          class="w-[12rem] h-[12rem] md:w-[20rem] md:h-[20rem] rounded-full object-cover border-4 border-black shadow-lg" />
-      </div>
+    <main class="flex flex-col md:flex-row min-h-screen">
+  <!-- Left Image -->
+  <div class="md:w-1/2 flex items-center justify-center py-10">
+    <img src="home.jpg" alt="Profile"
+      class="w-[40rem] h-[40rem] md:w-[20rem] md:h-[20rem] rounded-full object-cover border-4 border-black shadow-lg" />
+  </div>
 
-      <!-- Right Content (Tabs) -->
-      <div class="md:w-1/2 px-6 py-10">
+  <!-- Right Content (Tabs) -->
+  <div class="md:w-1/2 flex flex-col items-start px-6 py-10">
         <!-- Home Tab -->
         <section id="home" class="tab-content">
           <div class="home-content text-center md:text-left max-w-xl mt-20">
@@ -63,9 +62,8 @@
               <span class="text-blue-700">Junior Full Stack Developer</span>
             </h3>
             <p class="mb-6">
-              I’m a junior full stack developer skilled in HTML, CSS,
-              JavaScript, PHP, and Laravel, with academic experience in Java
-              and C++. Certified in CPRE-FL and CTFL, I’m passionate about
+              Skilled in HTML, CSS, JavaScript, PHP, and Laravel, with academic experience in Java
+              and C++. Certified in CPRE-FL and CTFL from MSTB, I’m passionate about
               software quality and building responsive, user-friendly
               websites. I’m adaptable, detail-oriented, and thrive in
               collaborative environments where I can learn and contribute.
@@ -101,63 +99,30 @@
         </section>
 
         <!-- Education Tab -->
-        <section id="education" class="tab-content hidden px-6 py-10 max-w-3xl mx-auto">
+        <section id="education" class="tab-content hidden">
           <h2 class="text-3xl font-bold text-blue-700 mb-6">Education</h2>
 
           <div class="space-y-8">
-            <!-- Timeline Item Template -->
+            <!-- High School -->
             <div class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group">
               <!-- Timeline Dot -->
-              <div class="absolute w-3 h-3 bg-blue-700 rounded-full left-[-7px] top-1/2 transform -translate-y-1/2">
-              </div>
-
-              <!-- Ellipsis Dropdown -->
-              <div class="absolute top-3 right-3 z-10">
-                <button onclick="toggleDropdown(this)" class="text-gray-400 hover:text-white text-2xl leading-none">
-                  &#x22EE;
+              <div class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
+                <button onclick="openModal('coursesModal')" class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
+                  See Courses
                 </button>
-              </div>
-            </div>
-          </section>
-
-          <!-- Education Tab -->
-          <section id="education" class="tab-content hidden">
-            <h2 class="text-3xl font-bold text-blue-700 mb-6">Education</h2>
-
-            <div class="space-y-8">
-              <!-- Timeline Item Template -->
-              <div
-                class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group"
-              >
-                <!-- Timeline Dot -->
+                <button onclick="openModal('certModal')" class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
+                  See Certificate
+                </button>
                 <div
                   class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
-                  <button onclick="openModal('coursesModal')"
-                    class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
-                    See Courses
+                  <button>
+                    <a href="assets/docs/spm.PDF" target="_blank"
+                      class="block px-4 py-2 bg-blue-700 text-white/ hover:bg-blue-800"> See Certificate </a>
                   </button>
-                  <button onclick="openModal('certModal')" class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
-                    See Certificate
-                  </button>
-                  <div class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
-                    <button>
-                      <a href="assets/docs/spm.PDF" target="_blank" class="block px-4 py-2 bg-blue-700 text-white/ hover:bg-blue-800"> See Certificate </a>
-                    </button>
-                  </div>
                 </div>
-
-                <!-- SPM -->
-                <h3 class="text-xl font-semibold text-white mb-1">
-                  SPM – Science Stream
-                </h3>
-                <div class="flex justify-between text-sm text-gray-400">
-                  <span>SMK Bandar Tasik Puteri</span>
-                  <span>2014 - 2018</span>
-                </div>
-                <p class="mt-2 text-sm text-blue-400">SPM: 2A- 3B+ 1C+ 1C 2D</p>
               </div>
 
-              <!-- Content -->
+              <!-- SPM -->
               <h3 class="text-xl font-semibold text-white mb-1">
                 SPM – Science Stream
               </h3>
@@ -165,96 +130,317 @@
                 <span>SMK Bandar Tasik Puteri</span>
                 <span>2014 - 2018</span>
               </div>
-              <p class="mt-2 text-sm text-blue-400">SPM: 2A-</p>
+              <p class="mt-2 text-sm text-blue-400">SPM: 2A- 3B+ 1C+ 1C 2D</p>
+            </div>
+          </div>
+
+          <!-- Matriculation -->
+          <div class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group">
+            <div class="absolute w-3 h-3 bg-blue-700 rounded-full left-[-7px] top-1/2 transform -translate-y-1/2">
             </div>
 
-            <!-- Matriculation -->
-            <div class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group">
-              <div class="absolute w-3 h-3 bg-blue-700 rounded-full left-[-7px] top-1/2 transform -translate-y-1/2">
-              </div>
-
-              <div class="absolute top-3 right-3 z-10">
-                <button onclick="toggleDropdown(this)" class="text-gray-400 hover:text-white text-2xl leading-none">
-                  &#x22EE;
+            <div class="absolute top-3 right-3 z-10">
+              <button onclick="toggleDropdown(this)" class="text-gray-400 hover:text-white text-2xl leading-none">
+                &#x22EE;
+              </button>
+              <div class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
+                <button onclick="openModal('coursesModal')" class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
+                  See Courses
+                </button>
+                <button onclick="openModal('certModal')" class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
+                  See Certificate
                 </button>
                 <div
                   class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
-                  <button onclick="openModal('coursesModal')"
-                    class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
-                    See Courses
-                  </button>
-                  <button onclick="openModal('certModal')" class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
-                    See Certificate
-                  </button>
-                  <div class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
-                    <button>
-                      <a href="assets/docs/matrics.PDF" target="_blank" class="block px-4 py-2 bg-blue-700 text-white/ hover:bg-blue-800"> See Certificate </a>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <h3 class="text-xl font-semibold text-white mb-1">
-                Matriculation in Science and Computer
-              </h3>
-              <div class="flex justify-between text-sm text-gray-400">
-                <span>College Matriculation of Pahang (KmPh)</span>
-                <span>2019 - 2020</span>
-              </div>
-              <p class="mt-2 text-sm text-blue-400">CGPA: 2.98</p>
-            </div>
-
-            <!-- Degree -->
-            <div class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group">
-              <div class="absolute w-3 h-3 bg-blue-700 rounded-full left-[-7px] top-1/2 transform -translate-y-1/2">
-              </div>
-
-              <div class="absolute top-3 right-3 z-10">
-                <button onclick="toggleDropdown(this)" class="text-gray-400 hover:text-white text-2xl leading-none">
-                  &#x22EE;
-                </button>
-                <div
-                  class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
-                  <button onclick="openModal('coursesModal')"
-                    class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
-                    See Courses
-                  </button>
-                  <button onclick="openModal('certModal')" class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
-                    See Certificate
-                  </button>
-                  <div
-                    class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2"
-                  >
                   <button>
-                    <a href="assets/docs/uitm.pdf" target="_blank" class="block px-4 py-2 bg-blue-700 text-white/ hover:bg-blue-800"> See Certificate </a>
+                    <a href="assets/docs/matrics.PDF" target="_blank"
+                      class="block px-4 py-2 bg-blue-700 text-white/ hover:bg-blue-800"> See Certificate </a>
                   </button>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-white mb-1">
+              Matriculation in Science and Computer
+            </h3>
+            <div class="flex justify-between text-sm text-gray-400">
+              <span>College Matriculation of Pahang (KmPh)</span>
+              <span>2019 - 2020</span>
+            </div>
+            <p class="mt-2 text-sm text-blue-400">CGPA: 2.98</p>
+          </div>
+
+          <!-- Degree -->
+          <div class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group">
+            <div class="absolute w-3 h-3 bg-blue-700 rounded-full left-[-7px] top-1/2 transform -translate-y-1/2">
+            </div>
+
+            <div class="absolute top-3 right-3 z-10">
+              <button onclick="toggleDropdown(this)" class="text-gray-400 hover:text-white text-2xl leading-none">
+                &#x22EE;
+              </button>
+              <div class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
+                <button onclick="openModal('coursesModal')" class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
+                  See Courses
+                </button>
+                <button onclick="openModal('certModal')" class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
+                  See Certificate
+                </button>
+                <div
+                  class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
+                  <button>
+                    <a href="assets/docs/uitm.pdf" target="_blank"
+                      class="block px-4 py-2 bg-blue-700 text-white/ hover:bg-blue-800"> See Certificate </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-white mb-1">
+              Bachelor of Information Systems Engineering
+            </h3>
+            <div class="flex justify-between text-sm text-gray-400">
+              <span>Universiti Teknologi MARA (UiTM)</span>
+              <span>2020 - 2024</span>
+            </div>
+            <p class="mt-2 text-sm text-blue-400">CGPA: 3.25</p>
+          </div>
+
+        </section>
+
+        <!-- Experiences -->
+        <section id="experiences" class="tab-content hidden">
+          <h2 class="text-3xl font-bold text-blue-700 mb-6">Experiences</h2>
+
+          <!-- Grid container for 2 cards per row -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+            <!-- Jr Full Stack -->
+            <div x-data="{ open: false, scopeOpen: false, skillsOpen: false }" class="relative h-full">
+              <div class="bg-white shadow-md hover:shadow-xl transition-shadow duration-300 rounded-2xl p-6 flex flex-col justify-between border border-gray-100 h-full">
+                <div class="mb-2">
+                  <h3 class="text-lg font-semibold text-blue-700 tracking-tight">Junior Full Stack Developer</h3>
+                  <p class="text-sm text-gray-500 mt-1">Alphia ventures Sdn Bhd</p>
+                  <p class="text-xs text-gray-400">March 2025 – Current</p>
+                </div>
+                <button @click="open = true" class="self-end text-blue-600 hover:text-blue-800 text-xl mt-4"
+                  title="View job details">
+                  &rarr;
+                </button>
+              </div>
+
+              <!-- Modal -->
+              <div x-show="open" x-transition
+                class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+                style="display: none;">
+                <div @click.away="open = false"
+                  class="bg-white rounded-xl shadow-lg p-6 max-w-md w-full relative max-h-[80vh] overflow-y-auto">
+                  <button @click="open = false"
+                    class="absolute top-3 right-4 text-gray-500 hover:text-red-500 text-xl">&times;</button>
+
+                  <h3 class="text-lg font-semibold text-blue-700 mb-1">Alphia Ventures Sdn Bhd</h3>
+                  <p class="italic text-xs text-gray-700 mb-4">
+                    Currently working as a Junior Full Stack Developer at Alphia Ventures Sdn Bhd, where I’m involved in
+                    developing and
+                    maintaining web and mobile-integrated solutions. My role spans across backend, frontend, performance
+                    optimization, and API integration to support dynamic and responsive digital platforms. </p>
+
+                  <!-- Job Scope Section -->
+                  <button @click="scopeOpen = !scopeOpen"
+                    class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
+                    <span x-text="scopeOpen ? 'Hide Job Scope' : 'Show Job Scope'"></span>
+                  </button>
+
+                  <div x-show="scopeOpen" x-transition class="mt-3 grid grid-cols-2 gap-4 text-sm text-gray-700">
+                    <div>
+                      <ul class="list-disc pl-5">
+                        <li>Developed and maintained full-stack applications using Laravel and Tailwind CSS.
+                        </li>
+                        <li>Contributed to mobile app preparation, including backend support and API readiness.</li>
+                        <li>Worked with WordPress, handling customization and plugin integration.</li>
+                        <li>Integrated and tested RESTful APIs for mobile app connectivity using Postman.</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <ul class="list-disc pl-5">
+                        <li>Implemented SEO improvements and optimized website load performance.</li>
+                        <li>Utilized Git and GitHub for version control and collaboration.</li>
+                        <li>Managed hosting and deployment using cPanel.</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <hr class="border border-gray-300 mt-3 mb-3">
+
+                  <!-- Skills Section -->
+                  <button @click="skillsOpen = !skillsOpen"
+                    class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
+                    <span x-text="skillsOpen ? 'Hide Skills' : 'Gained Skills'"></span>
+                  </button>
+
+                  <div x-show="skillsOpen" x-transition class="mt-3 grid grid-cols-2 gap-4 text-sm text-gray-700">
+                    <div>
+                      <strong class="block text-gray-900 mb-1">Frontend Development</strong>
+                      <ul class="list-disc pl-5">
+                        <li>JavaScript</li>
+                        <li>Alpine.js</li>
+                        <li>Tailwind CSS</li>
+                        <li>AJAX</li>
+                      </ul>
+
+                      <strong class="block text-gray-900 mt-4 mb-1">Backend Development</strong>
+                      <ul class="list-disc pl-5">
+                        <li>Laravel</li>
+                        <li>REST API development</li>
+                        <li>MySQL</li>
+                      </ul>
+
+                      <strong class="block text-gray-900 mt-4 mb-1">Testing</strong>
+                      <ul class="list-disc pl-5">
+                        <li>Manual Testing</li>
+                        <li>Regression Testing</li>
+                        <li>White Box & Black Box Testing</li>
+
+                      </ul>
+                    </div>
+
+                    <div>
+                      <strong class="block text-gray-900 mb-1">Frameworks & Tools</strong>
+                      <ul class="list-disc pl-5">
+                        <li>Laravel</li>
+                        <li>Tailwind CSS</li>
+                        <li>Alpine.js</li>
+                        <li>WordPress</li>
+                        <li>Git & GitHub</li>
+                        <li>cPanel</li>
+                        <li>PHPMyAdmin</li>
+                      </ul>
+
+                      <strong class="block text-gray-900 mt-4 mb-1">Performance & SEO</strong>
+                      <ul class="list-disc pl-5">
+                        <li>Page speed optimization</li>
+                        <li>Metadata setup</li>
+                        <li>SEO tagging</li>
+                      </ul>
+
+                      <strong class="block text-gray-900 mt-4 mb-1">Testing & DevOps</strong>
+                      <ul class="list-disc pl-5">
+                        <li>Postman</li>
+                        <li>Deployment via cPanel</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Internship -->
+            <div x-data="{ open: false, scopeOpen: false, skillsOpen: false }" class="relative h-full">
+              <div class="bg-white shadow-md hover:shadow-xl transition-shadow duration-300 rounded-2xl p-6 flex flex-col justify-between border border-gray-100 h-full">
+                <div class="mb-2">
+                  <h3 class="text-lg font-semibold text-blue-700 tracking-tight">Software Developer Intern</h3>
+                  <p class="text-sm text-gray-500 mt-1">HeiTech Padu Berhad</p>
+                  <p class="text-xs text-gray-400">March 2024 – March 2025</p>
+                </div>
+                <button @click="open = true" class="self-end text-blue-600 hover:text-blue-800 text-xl mt-4"
+                  title="View job details">
+                  &rarr;
+                </button>
+              </div>
+
+              <!-- Modal -->
+              <div x-show="open" x-transition
+                class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+                style="display: none;">
+                <div @click.away="open = false"
+                  class="bg-white rounded-xl shadow-lg p-6 max-w-md w-full relative max-h-[80vh] overflow-y-auto">
+                  <button @click="open = false"
+                    class="absolute top-3 right-4 text-gray-500 hover:text-red-500 text-xl">&times;</button>
+
+                  <h3 class="text-lg font-semibold text-blue-700 mb-1">HeiTech Padu Berhad</h3>
+                  <p class="italic text-xs text-gray-700 mb-4">
+                    Completed a 1-year internship as a Software Engineer Intern at HeiTech Padu Berhad, contributing to
+                    both system development and manual testing.
+                    Gained hands-on experience in PHP, JavaScript, and MySQL while supporting UI design and executing
+                    test cases for a partner-facing internal system.
+                  </p>
+
+                  <!-- Job Scope Section -->
+                  <button @click="scopeOpen = !scopeOpen"
+                    class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
+                    <span x-text="scopeOpen ? 'Hide Job Scope' : 'Show Job Scope'"></span>
+                  </button>
+
+                  <div x-show="scopeOpen" x-transition class="mt-3 grid grid-cols-2 gap-4 text-sm text-gray-700">
+                    <div>
+                      <ul class="list-disc pl-5">
+                        <li>Contributed to the development of an internal system used by the company and its partners.
+                        </li>
+                        <li>Participated in both frontend and backend development using PHP, JavaScript, and SQL.</li>
+                        <li>Designed and executed manual test cases to ensure system reliability and functionality.</li>
+                        <li>Reported bugs, validated feature requirements, and assisted in user acceptance testing
+                          (UAT).</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <ul class="list-disc pl-5">
+                        <li>Gained hands-on experience across the full software development lifecycle (SDLC).</li>
+                        <li>Collaborated with cross-functional teams to improve system quality and performance.</li>
+                        <li>Strengthened skills in problem-solving, system logic, and code debugging.</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <hr class="border border-gray-300 mt-3 mb-3">
+
+                  <!-- Skills Section -->
+                  <button @click="skillsOpen = !skillsOpen"
+                    class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
+                    <span x-text="skillsOpen ? 'Hide Skills' : 'Gained Skills'"></span>
+                  </button>
+
+                  <div x-show="skillsOpen" x-transition class="mt-3 grid grid-cols-2 gap-4 text-sm text-gray-700">
+                    <div>
+                      <strong class="block text-gray-900 mb-1">Frontend Development</strong>
+                      <ul class="list-disc pl-5">
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Bootstrap</li>
+                        <li>jQuery</li>
+                      </ul>
+
+                      <strong class="block text-gray-900 mt-4 mb-1">Backend Development</strong>
+                      <ul class="list-disc pl-5">
+                        <li>PHP</li>
+                        <li>MySQL</li>
+                        <li>Laravel Blade (templating)</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <strong class="block text-gray-900 mb-1">Tools & Platforms</strong>
+                      <ul class="list-disc pl-5">
+                        <li>PHPMyAdmin</li>
+                        <li>Git</li>
+                        <li>VS Code</li>
+                        <li>Chrome DevTools</li>
+                      </ul>
+
+                      <strong class="block text-gray-900 mt-4 mb-1">Design & Testing</strong>
+                      <ul class="list-disc pl-5">
+                        <li>Figma</li>
+                        <li>Canva</li>
+                        <li>Manual Testing</li>
+                        <li>User Acceptance Testing (UAT)</li>
+                        <li>Test Cases and Documentation</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              <h3 class="text-xl font-semibold text-white mb-1">
-                Bachelor of Information Systems Engineering
-              </h3>
-              <div class="flex justify-between text-sm text-gray-400">
-                <span>Universiti Teknologi MARA (UiTM)</span>
-                <span>2020 - 2024</span>
-              </div>
-              <p class="mt-2 text-sm text-blue-400">CGPA: 3.25</p>
             </div>
-          </div>
-        </section>
 
-        <section id="experiences" class="tab-content hidden">
-          <div class="exp-content text-center md:text-left max-w-xl mt-20">
-            <h2 class="text-2xl font-semibold mb-4">Experiences</h2>
-            <p>Your work experiences go here...</p>
-          </div>
-        </section>
-
-        <section id="skills" class="tab-content hidden">
-          <div class="skill-content text-center md:text-left max-w-xl mt-20">
-            <h2 class="text-2xl font-semibold mb-4">Skills</h2>
-            <p>Skills and technologies...</p>
           </div>
         </section>
 
@@ -264,7 +450,6 @@
             <p>Project descriptions...</p>
           </div>
         </section>
-
         <section id="contact" class="tab-content hidden">
           <div class="contact-content text-center md:text-left max-w-xl mt-20">
             <h2 class="text-2xl font-semibold mb-4">Contact</h2>
