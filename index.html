@@ -43,14 +43,14 @@
 
     <!-- Main Content Area -->
     <main class="flex flex-col md:flex-row min-h-screen">
-  <!-- Left Image -->
-  <div class="md:w-1/2 flex items-center justify-center py-10">
-    <img src="home.jpg" alt="Profile"
-      class="w-[40rem] h-[40rem] md:w-[20rem] md:h-[20rem] rounded-full object-cover border-4 border-black shadow-lg" />
-  </div>
+      <!-- Left Image -->
+      <div class="md:w-1/2 flex items-center justify-center py-10">
+        <img src="home.jpg" alt="Profile"
+          class="w-[40rem] h-[40rem] md:w-[20rem] md:h-[20rem] rounded-full object-cover border-4 border-black shadow-lg" />
+      </div>
 
-  <!-- Right Content (Tabs) -->
-  <div class="md:w-1/2 flex flex-col items-start px-6 py-10">
+      <!-- Right Content (Tabs) -->
+      <div class="md:w-1/2 flex flex-col items-start px-6 py-10">
         <!-- Home Tab -->
         <section id="home" class="tab-content">
           <div class="home-content text-center md:text-left max-w-xl mt-20">
@@ -102,10 +102,15 @@
         <section id="education" class="tab-content hidden">
           <h2 class="text-3xl font-bold text-blue-700 mb-6">Education</h2>
 
-          <div class="space-y-8">
-            <!-- High School -->
-            <div class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group">
-              <!-- Timeline Dot -->
+          <!-- High School -->
+          <div class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group mb-3">
+            <div class="absolute w-3 h-3 bg-blue-700 rounded-full left-[-7px] top-1/2 transform -translate-y-1/2">
+            </div>
+
+            <div class="absolute top-3 right-3 z-10">
+              <button onclick="toggleDropdown(this)" class="text-gray-400 hover:text-white text-2xl leading-none">
+                &#x22EE;
+              </button>
               <div class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
                 <button onclick="openModal('coursesModal')" class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
                   See Courses
@@ -116,26 +121,25 @@
                 <div
                   class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
                   <button>
-                    <a href="assets/docs/spm.PDF" target="_blank"
+                    <a href="assets/docs/matrics.PDF" target="_blank"
                       class="block px-4 py-2 bg-blue-700 text-white/ hover:bg-blue-800"> See Certificate </a>
                   </button>
                 </div>
               </div>
-
-              <!-- SPM -->
-              <h3 class="text-xl font-semibold text-white mb-1">
-                SPM – Science Stream
-              </h3>
-              <div class="flex justify-between text-sm text-gray-400">
-                <span>SMK Bandar Tasik Puteri</span>
-                <span>2014 - 2018</span>
-              </div>
-              <p class="mt-2 text-sm text-blue-400">SPM: 2A- 3B+ 1C+ 1C 2D</p>
             </div>
+
+            <h3 class="text-xl font-semibold text-white mb-1">
+              SPM – Science Stream
+            </h3>
+            <div class="flex justify-between text-sm text-gray-400">
+              <span>SMK Bandar Tasik Puteri</span>
+              <span>2014 - 2018</span>
+            </div>
+            <p class="mt-2 text-sm text-blue-400">SPM: 2A- 3B+ 1C+ 1C 2D</p>
           </div>
 
           <!-- Matriculation -->
-          <div class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group">
+          <div class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group mb-3">
             <div class="absolute w-3 h-3 bg-blue-700 rounded-full left-[-7px] top-1/2 transform -translate-y-1/2">
             </div>
 
@@ -171,7 +175,7 @@
           </div>
 
           <!-- Degree -->
-          <div class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group">
+          <div class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group mb-3">
             <div class="absolute w-3 h-3 bg-blue-700 rounded-full left-[-7px] top-1/2 transform -translate-y-1/2">
             </div>
 
@@ -210,254 +214,331 @@
 
         <!-- Experiences -->
         <section id="experiences" class="tab-content hidden">
-          <h2 class="text-3xl font-bold text-blue-700 mb-6">Experiences</h2>
+          <!-- Professional Career -->
+          <div class="mb-2">
+            <h2 class="text-3xl font-bold text-blue-700 mb-6">Experiences</h2>
 
-          <!-- Grid container for 2 cards per row -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
-            <!-- Jr Full Stack -->
-            <div x-data="{ open: false, scopeOpen: false, skillsOpen: false }" class="relative h-full">
-              <div class="bg-white shadow-md hover:shadow-xl transition-shadow duration-300 rounded-2xl p-6 flex flex-col justify-between border border-gray-100 h-full">
-                <div class="mb-2">
-                  <h3 class="text-lg font-semibold text-blue-700 tracking-tight">Junior Full Stack Developer</h3>
-                  <p class="text-sm text-gray-500 mt-1">Alphia ventures Sdn Bhd</p>
-                  <p class="text-xs text-gray-400">March 2025 – Current</p>
+              <!-- Jr Full Stack -->
+              <div x-data="{ open: false, scopeOpen: false, skillsOpen: false }" class="relative h-full">
+                <div
+                  class="bg-gray-100 hover:border-blue-700 border border-gray-100 hover:ring-2 hover:ring-blue-500/50 transition duration-300 rounded-2xl p-6 flex flex-col justify-between h-full">
+                  <div class="mb-2">
+                    <h3 class="text-lg font-semibold text-blue-700 tracking-tight">Junior Full Stack Developer</h3>
+                    <p class="text-sm text-gray-900 mt-1">Alphia ventures Sdn Bhd</p>
+                    <p class="text-xs text-gray-500 mt-4">March 2025 – Current</p>
+                  </div>
+                  <button @click="open = true"
+                    class="relative self-end text-blue-600 hover:text-blue-800 text-xl mt-4 transition duration-300 before:content-[''] before:absolute before:inset-[-0.5rem] before:rounded-full before:bg-blue-500 before:opacity-0 hover:before:opacity-30 before:blur-md before:transition-all"
+                    title="View job details">
+                    &rarr;
+                  </button>
                 </div>
-                <button @click="open = true" class="self-end text-blue-600 hover:text-blue-800 text-xl mt-4"
-                  title="View job details">
-                  &rarr;
-                </button>
+
+                <!-- Modal -->
+                <div x-show="open" x-transition
+                  class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+                  style="display: none;">
+                  <div @click.away="open = false"
+                    class="bg-white rounded-xl shadow-lg p-6 max-w-md w-full relative max-h-[80vh] overflow-y-auto">
+                    <button @click="open = false"
+                      class="absolute top-3 right-4 text-gray-500 hover:text-red-500 text-xl">&times;</button>
+
+                    <h3 class="text-lg font-semibold text-blue-700 mb-1">Alphia Ventures Sdn Bhd</h3>
+                    <p class="italic text-xs text-gray-700 mb-4">
+                      Currently working as a Junior Full Stack Developer at Alphia Ventures Sdn Bhd, where I’m involved
+                      in
+                      developing and
+                      maintaining web and mobile-integrated solutions. My role spans across backend, frontend,
+                      performance
+                      optimization, and API integration to support dynamic and responsive digital platforms. </p>
+
+                    <!-- Job Scope Section -->
+                    <button @click="scopeOpen = !scopeOpen"
+                      class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
+                      <span x-text="scopeOpen ? 'Hide Job Scope' : 'Show Job Scope'"></span>
+                    </button>
+
+                    <div x-show="scopeOpen" x-transition class="mt-3 grid grid-cols-2 gap-4 text-sm text-gray-700">
+                      <div>
+                        <ul class="list-disc pl-5">
+                          <li>Developed and maintained full-stack applications using Laravel and Tailwind CSS.
+                          </li>
+                          <li>Contributed to mobile app preparation, including backend support and API readiness.</li>
+                          <li>Worked with WordPress, handling customization and plugin integration.</li>
+                          <li>Integrated and tested RESTful APIs for mobile app connectivity using Postman.</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <ul class="list-disc pl-5">
+                          <li>Implemented SEO improvements and optimized website load performance.</li>
+                          <li>Utilized Git and GitHub for version control and collaboration.</li>
+                          <li>Managed hosting and deployment using cPanel.</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <hr class="border border-gray-300 mt-3 mb-3">
+
+                    <!-- Skills Section -->
+                    <button @click="skillsOpen = !skillsOpen"
+                      class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
+                      <span x-text="skillsOpen ? 'Hide Skills' : 'Gained Skills'"></span>
+                    </button>
+
+                    <div x-show="skillsOpen" x-transition class="mt-3 grid grid-cols-2 gap-4 text-sm text-gray-700">
+                      <div>
+                        <strong class="block text-gray-900 mb-1">Frontend Development</strong>
+                        <ul class="list-disc pl-5">
+                          <li>JavaScript</li>
+                          <li>Alpine.js</li>
+                          <li>Tailwind CSS</li>
+                          <li>AJAX</li>
+                        </ul>
+
+                        <strong class="block text-gray-900 mt-4 mb-1">Backend Development</strong>
+                        <ul class="list-disc pl-5">
+                          <li>Laravel</li>
+                          <li>REST API development</li>
+                          <li>MySQL</li>
+                        </ul>
+
+                        <strong class="block text-gray-900 mt-4 mb-1">Testing</strong>
+                        <ul class="list-disc pl-5">
+                          <li>Manual Testing</li>
+                          <li>Regression Testing</li>
+                          <li>White Box & Black Box Testing</li>
+
+                        </ul>
+                      </div>
+
+                      <div>
+                        <strong class="block text-gray-900 mb-1">Frameworks & Tools</strong>
+                        <ul class="list-disc pl-5">
+                          <li>Laravel</li>
+                          <li>Tailwind CSS</li>
+                          <li>Alpine.js</li>
+                          <li>WordPress</li>
+                          <li>Git & GitHub</li>
+                          <li>cPanel</li>
+                          <li>PHPMyAdmin</li>
+                        </ul>
+
+                        <strong class="block text-gray-900 mt-4 mb-1">Performance & SEO</strong>
+                        <ul class="list-disc pl-5">
+                          <li>Page speed optimization</li>
+                          <li>Metadata setup</li>
+                          <li>SEO tagging</li>
+                        </ul>
+
+                        <strong class="block text-gray-900 mt-4 mb-1">Testing & DevOps</strong>
+                        <ul class="list-disc pl-5">
+                          <li>Postman</li>
+                          <li>Deployment via cPanel</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
               </div>
 
-              <!-- Modal -->
-              <div x-show="open" x-transition
-                class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-                style="display: none;">
-                <div @click.away="open = false"
-                  class="bg-white rounded-xl shadow-lg p-6 max-w-md w-full relative max-h-[80vh] overflow-y-auto">
-                  <button @click="open = false"
-                    class="absolute top-3 right-4 text-gray-500 hover:text-red-500 text-xl">&times;</button>
+              <!-- Internship -->
+              <div x-data="{ open: false, scopeOpen: false, skillsOpen: false }" class="relative h-full">
+                <div
+                  class="bg-gray-100 hover:border-blue-700 border border-gray-100 hover:ring-2 hover:ring-blue-500/50 transition duration-300 rounded-2xl p-6 flex flex-col justify-between h-full">
 
-                  <h3 class="text-lg font-semibold text-blue-700 mb-1">Alphia Ventures Sdn Bhd</h3>
-                  <p class="italic text-xs text-gray-700 mb-4">
-                    Currently working as a Junior Full Stack Developer at Alphia Ventures Sdn Bhd, where I’m involved in
-                    developing and
-                    maintaining web and mobile-integrated solutions. My role spans across backend, frontend, performance
-                    optimization, and API integration to support dynamic and responsive digital platforms. </p>
-
-                  <!-- Job Scope Section -->
-                  <button @click="scopeOpen = !scopeOpen"
-                    class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
-                    <span x-text="scopeOpen ? 'Hide Job Scope' : 'Show Job Scope'"></span>
+                  <div class="mb-2">
+                    <h3 class="text-lg font-semibold text-blue-700 tracking-tight">Software Developer Intern</h3>
+                    <p class="text-sm text-gray-900 mt-1">HeiTech Padu Berhad</p>
+                    <p class="text-xs text-gray-500 mt-4">March 2024 – March 2025</p>
+                  </div>
+                  <button @click="open = true" class="relative self-end text-blue-600 hover:text-blue-800 text-xl mt-4 transition duration-300
+         before:content-[''] before:absolute before:inset-[-0.5rem] before:rounded-full
+         before:bg-blue-500 before:opacity-0 hover:before:opacity-30 before:blur-md before:transition-all"
+                    title="View job details">
+                    &rarr;
                   </button>
+                </div>
 
-                  <div x-show="scopeOpen" x-transition class="mt-3 grid grid-cols-2 gap-4 text-sm text-gray-700">
-                    <div>
-                      <ul class="list-disc pl-5">
-                        <li>Developed and maintained full-stack applications using Laravel and Tailwind CSS.
-                        </li>
-                        <li>Contributed to mobile app preparation, including backend support and API readiness.</li>
-                        <li>Worked with WordPress, handling customization and plugin integration.</li>
-                        <li>Integrated and tested RESTful APIs for mobile app connectivity using Postman.</li>
-                      </ul>
+                <!-- Modal -->
+                <div x-show="open" x-transition
+                  class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+                  style="display: none;">
+                  <div @click.away="open = false"
+                    class="bg-white rounded-xl shadow-lg p-6 max-w-md w-full relative max-h-[80vh] overflow-y-auto">
+                    <button @click="open = false"
+                      class="absolute top-3 right-4 text-gray-500 hover:text-red-500 text-xl">&times;</button>
+
+                    <h3 class="text-lg font-semibold text-blue-700 mb-1">HeiTech Padu Berhad</h3>
+                    <p class="italic text-xs text-gray-700 mb-4">
+                      Completed a 1-year internship as a Software Engineer Intern at HeiTech Padu Berhad, contributing
+                      to
+                      both system development and manual testing.
+                      Gained hands-on experience in PHP, JavaScript, and MySQL while supporting UI design and executing
+                      test cases for a partner-facing internal system.
+                    </p>
+
+                    <!-- Job Scope Section -->
+                    <button @click="scopeOpen = !scopeOpen"
+                      class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
+                      <span x-text="scopeOpen ? 'Hide Job Scope' : 'Show Job Scope'"></span>
+                    </button>
+
+                    <div x-show="scopeOpen" x-transition class="mt-3 grid grid-cols-2 gap-4 text-sm text-gray-700">
+                      <div>
+                        <ul class="list-disc pl-5">
+                          <li>Contributed to the development of an internal system used by the company and its partners.
+                          </li>
+                          <li>Participated in both frontend and backend development using PHP, JavaScript, and SQL.</li>
+                          <li>Designed and executed manual test cases to ensure system reliability and functionality.
+                          </li>
+                          <li>Reported bugs, validated feature requirements, and assisted in user acceptance testing
+                            (UAT).</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <ul class="list-disc pl-5">
+                          <li>Gained hands-on experience across the full software development lifecycle (SDLC).</li>
+                          <li>Collaborated with cross-functional teams to improve system quality and performance.</li>
+                          <li>Strengthened skills in problem-solving, system logic, and code debugging.</li>
+                        </ul>
+                      </div>
                     </div>
-                    <div>
-                      <ul class="list-disc pl-5">
-                        <li>Implemented SEO improvements and optimized website load performance.</li>
-                        <li>Utilized Git and GitHub for version control and collaboration.</li>
-                        <li>Managed hosting and deployment using cPanel.</li>
-                      </ul>
+
+                    <hr class="border border-gray-300 mt-3 mb-3">
+
+                    <!-- Skills Section -->
+                    <button @click="skillsOpen = !skillsOpen"
+                      class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
+                      <span x-text="skillsOpen ? 'Hide Skills' : 'Gained Skills'"></span>
+                    </button>
+
+                    <div x-show="skillsOpen" x-transition class="mt-3 grid grid-cols-2 gap-4 text-sm text-gray-700">
+                      <div>
+                        <strong class="block text-gray-900 mb-1">Frontend Development</strong>
+                        <ul class="list-disc pl-5">
+                          <li>HTML5 & CSS3</li>
+                          <li>JavaScript</li>
+                          <li>Bootstrap</li>
+                          <li>jQuery</li>
+                        </ul>
+
+                        <strong class="block text-gray-900 mt-4 mb-1">Backend Development</strong>
+                        <ul class="list-disc pl-5">
+                          <li>PHP</li>
+                          <li>MySQL</li>
+                          <li>Laravel Blade (templating)</li>
+                        </ul>
+                      </div>
+
+                      <div>
+                        <strong class="block text-gray-900 mb-1">Tools & Platforms</strong>
+                        <ul class="list-disc pl-5">
+                          <li>PHPMyAdmin</li>
+                          <li>Git</li>
+                          <li>VS Code</li>
+                          <li>Chrome DevTools</li>
+                        </ul>
+
+                        <strong class="block text-gray-900 mt-4 mb-1">Design & Testing</strong>
+                        <ul class="list-disc pl-5">
+                          <li>Figma</li>
+                          <li>Canva</li>
+                          <li>Manual Testing</li>
+                          <li>User Acceptance Testing (UAT)</li>
+                          <li>Test Cases and Documentation</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-                  <hr class="border border-gray-300 mt-3 mb-3">
+          <!-- Professional Certificates -->
+          <div class="mb-2 mt-10">
+            <h2 class="text-3xl font-bold text-blue-700 mb-6">Certifications</h2>
 
-                  <!-- Skills Section -->
-                  <button @click="skillsOpen = !skillsOpen"
-                    class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
-                    <span x-text="skillsOpen ? 'Hide Skills' : 'Gained Skills'"></span>
-                  </button>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- IREB -->
+              <div class="relative h-full">
+                <div
+                  class="bg-gray-100 hover:border-blue-700 border border-gray-100 hover:ring-2 hover:ring-blue-500/50 transition duration-300 rounded-2xl p-6 flex flex-col justify-between h-full">
 
-                  <div x-show="skillsOpen" x-transition class="mt-3 grid grid-cols-2 gap-4 text-sm text-gray-700">
-                    <div>
-                      <strong class="block text-gray-900 mb-1">Frontend Development</strong>
-                      <ul class="list-disc pl-5">
-                        <li>JavaScript</li>
-                        <li>Alpine.js</li>
-                        <li>Tailwind CSS</li>
-                        <li>AJAX</li>
-                      </ul>
+                  <div class="mb-2">
+                    <h3 class="text-lg font-semibold text-blue-700 tracking-tight">
+                      IREB Certified Professional for Requirements Engineering - Foundation Level
+                    </h3>
+                    <p class="text-sm text-gray-900 mt-1">Malaysian Software Testing Board (MSTB)</p>
+                  </div>
 
-                      <strong class="block text-gray-900 mt-4 mb-1">Backend Development</strong>
-                      <ul class="list-disc pl-5">
-                        <li>Laravel</li>
-                        <li>REST API development</li>
-                        <li>MySQL</li>
-                      </ul>
+                  <!-- Bottom row: Credential + Arrow -->
+                  <div class="flex justify-between items-center mt-4">
+                    <a href="https://mstb.org/certification-directory/" target="_blank" rel="noopener noreferrer">
+                      <p class="text-xs text-gray-500 hover:underline">Show Credential</p>
+                    </a>
 
-                      <strong class="block text-gray-900 mt-4 mb-1">Testing</strong>
-                      <ul class="list-disc pl-5">
-                        <li>Manual Testing</li>
-                        <li>Regression Testing</li>
-                        <li>White Box & Black Box Testing</li>
+                    <button @click="open = true" class="relative text-blue-600 hover:text-blue-800 text-xl transition duration-300 
+               before:content-[''] before:absolute before:inset-[-0.5rem] before:rounded-full 
+               before:bg-blue-500 before:opacity-0 hover:before:opacity-30 before:blur-md 
+               before:transition-all" title="View Certificate">
+                      &rarr;
+                    </button>
+                  </div>
 
-                      </ul>
-                    </div>
+                </div>
+              </div>
 
-                    <div>
-                      <strong class="block text-gray-900 mb-1">Frameworks & Tools</strong>
-                      <ul class="list-disc pl-5">
-                        <li>Laravel</li>
-                        <li>Tailwind CSS</li>
-                        <li>Alpine.js</li>
-                        <li>WordPress</li>
-                        <li>Git & GitHub</li>
-                        <li>cPanel</li>
-                        <li>PHPMyAdmin</li>
-                      </ul>
+              <!-- ISTQB -->
+              <div class="relative h-full">
+                <div
+                  class="bg-gray-100 hover:border-blue-700 border border-gray-100 hover:ring-2 hover:ring-blue-500/50 transition duration-300 rounded-2xl p-6 flex flex-col justify-between h-full">
 
-                      <strong class="block text-gray-900 mt-4 mb-1">Performance & SEO</strong>
-                      <ul class="list-disc pl-5">
-                        <li>Page speed optimization</li>
-                        <li>Metadata setup</li>
-                        <li>SEO tagging</li>
-                      </ul>
+                  <div class="mb-2">
+                    <h3 class="text-lg font-semibold text-blue-700 tracking-tight">
+                      ISTQB Certified Tester - Foundation Level
+                    </h3>
+                    <p class="text-sm text-gray-900 mt-1">Malaysian Software Testing Board (MSTB)</p>
+                  </div>
 
-                      <strong class="block text-gray-900 mt-4 mb-1">Testing & DevOps</strong>
-                      <ul class="list-disc pl-5">
-                        <li>Postman</li>
-                        <li>Deployment via cPanel</li>
-                      </ul>
-                    </div>
+                  <!-- Bottom row: Credential + Arrow -->
+                  <div class="flex justify-between items-center mt-4">
+                    <a href="https://mstb.org/certification-directory/" target="_blank" rel="noopener noreferrer">
+                      <p class="text-xs text-gray-500 hover:underline">Show Credential</p>
+                    </a>
+
+                    <button @click="open = true" class="relative text-blue-600 hover:text-blue-800 text-xl transition duration-300 
+               before:content-[''] before:absolute before:inset-[-0.5rem] before:rounded-full 
+               before:bg-blue-500 before:opacity-0 hover:before:opacity-30 before:blur-md 
+               before:transition-all" title="View Certificate">
+                      &rarr;
+                    </button>
                   </div>
 
                 </div>
               </div>
             </div>
-
-            <!-- Internship -->
-            <div x-data="{ open: false, scopeOpen: false, skillsOpen: false }" class="relative h-full">
-              <div class="bg-white shadow-md hover:shadow-xl transition-shadow duration-300 rounded-2xl p-6 flex flex-col justify-between border border-gray-100 h-full">
-                <div class="mb-2">
-                  <h3 class="text-lg font-semibold text-blue-700 tracking-tight">Software Developer Intern</h3>
-                  <p class="text-sm text-gray-500 mt-1">HeiTech Padu Berhad</p>
-                  <p class="text-xs text-gray-400">March 2024 – March 2025</p>
-                </div>
-                <button @click="open = true" class="self-end text-blue-600 hover:text-blue-800 text-xl mt-4"
-                  title="View job details">
-                  &rarr;
-                </button>
-              </div>
-
-              <!-- Modal -->
-              <div x-show="open" x-transition
-                class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-                style="display: none;">
-                <div @click.away="open = false"
-                  class="bg-white rounded-xl shadow-lg p-6 max-w-md w-full relative max-h-[80vh] overflow-y-auto">
-                  <button @click="open = false"
-                    class="absolute top-3 right-4 text-gray-500 hover:text-red-500 text-xl">&times;</button>
-
-                  <h3 class="text-lg font-semibold text-blue-700 mb-1">HeiTech Padu Berhad</h3>
-                  <p class="italic text-xs text-gray-700 mb-4">
-                    Completed a 1-year internship as a Software Engineer Intern at HeiTech Padu Berhad, contributing to
-                    both system development and manual testing.
-                    Gained hands-on experience in PHP, JavaScript, and MySQL while supporting UI design and executing
-                    test cases for a partner-facing internal system.
-                  </p>
-
-                  <!-- Job Scope Section -->
-                  <button @click="scopeOpen = !scopeOpen"
-                    class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
-                    <span x-text="scopeOpen ? 'Hide Job Scope' : 'Show Job Scope'"></span>
-                  </button>
-
-                  <div x-show="scopeOpen" x-transition class="mt-3 grid grid-cols-2 gap-4 text-sm text-gray-700">
-                    <div>
-                      <ul class="list-disc pl-5">
-                        <li>Contributed to the development of an internal system used by the company and its partners.
-                        </li>
-                        <li>Participated in both frontend and backend development using PHP, JavaScript, and SQL.</li>
-                        <li>Designed and executed manual test cases to ensure system reliability and functionality.</li>
-                        <li>Reported bugs, validated feature requirements, and assisted in user acceptance testing
-                          (UAT).</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <ul class="list-disc pl-5">
-                        <li>Gained hands-on experience across the full software development lifecycle (SDLC).</li>
-                        <li>Collaborated with cross-functional teams to improve system quality and performance.</li>
-                        <li>Strengthened skills in problem-solving, system logic, and code debugging.</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <hr class="border border-gray-300 mt-3 mb-3">
-
-                  <!-- Skills Section -->
-                  <button @click="skillsOpen = !skillsOpen"
-                    class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
-                    <span x-text="skillsOpen ? 'Hide Skills' : 'Gained Skills'"></span>
-                  </button>
-
-                  <div x-show="skillsOpen" x-transition class="mt-3 grid grid-cols-2 gap-4 text-sm text-gray-700">
-                    <div>
-                      <strong class="block text-gray-900 mb-1">Frontend Development</strong>
-                      <ul class="list-disc pl-5">
-                        <li>HTML5 & CSS3</li>
-                        <li>JavaScript</li>
-                        <li>Bootstrap</li>
-                        <li>jQuery</li>
-                      </ul>
-
-                      <strong class="block text-gray-900 mt-4 mb-1">Backend Development</strong>
-                      <ul class="list-disc pl-5">
-                        <li>PHP</li>
-                        <li>MySQL</li>
-                        <li>Laravel Blade (templating)</li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <strong class="block text-gray-900 mb-1">Tools & Platforms</strong>
-                      <ul class="list-disc pl-5">
-                        <li>PHPMyAdmin</li>
-                        <li>Git</li>
-                        <li>VS Code</li>
-                        <li>Chrome DevTools</li>
-                      </ul>
-
-                      <strong class="block text-gray-900 mt-4 mb-1">Design & Testing</strong>
-                      <ul class="list-disc pl-5">
-                        <li>Figma</li>
-                        <li>Canva</li>
-                        <li>Manual Testing</li>
-                        <li>User Acceptance Testing (UAT)</li>
-                        <li>Test Cases and Documentation</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
-        </section>
-
-        <section id="projects" class="tab-content hidden">
-          <div class="project-content text-center md:text-left max-w-xl mt-20">
-            <h2 class="text-2xl font-semibold mb-4">Projects</h2>
-            <p>Project descriptions...</p>
-          </div>
-        </section>
-        <section id="contact" class="tab-content hidden">
-          <div class="contact-content text-center md:text-left max-w-xl mt-20">
-            <h2 class="text-2xl font-semibold mb-4">Contact</h2>
-            <p>Contact me at maizatulmokhtar85@gmail.com</p>
-          </div>
-        </section>
       </div>
-    </main>
+      </section>
+
+      <section id="projects" class="tab-content hidden">
+        <div class="project-content text-center md:text-left max-w-xl mt-20">
+          <h2 class="text-2xl font-semibold mb-4">Projects</h2>
+          <p>Project descriptions...</p>
+        </div>
+      </section>
+      <section id="contact" class="tab-content hidden">
+        <div class="contact-content text-center md:text-left max-w-xl mt-20">
+          <h2 class="text-2xl font-semibold mb-4">Contact</h2>
+          <p>Contact me at maizatulmokhtar85@gmail.com</p>
+        </div>
+      </section>
+  </div>
+  </main>
   </div>
 
   <!-- JavaScript for Tabs -->
