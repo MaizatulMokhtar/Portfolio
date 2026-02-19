@@ -1,0 +1,124 @@
+html { scroll-behavior: smooth; }
+body { 
+  font-family: "Poppins", sans-serif; 
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #0f172a 50%, #1a1f35 75%, #0f172a 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideInRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+.animate-fade-in { animation: fadeInUp 0.8s ease-out forwards; }
+.animate-slide-left { animation: slideInLeft 0.8s ease-out forwards; }
+.animate-slide-right { animation: slideInRight 0.8s ease-out forwards; }
+.animate-scale-in { animation: scaleIn 0.6s ease-out forwards; }
+
+.section { min-height: 100vh; display: flex; align-items: center; scroll-margin-top: 80px; }
+.scroll-spy.active { color: #2563eb !important; font-weight: bold !important; }
+
+.stagger-item { animation: fadeInUp 0.6s ease-out backwards; opacity: 0; }
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+
+.card-hover { transition: all 0.3s ease; }
+.card-hover:hover { transform: translateY(-5px); }
+
+@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+@keyframes glow { 0%, 100% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.5), 0 0 40px rgba(37, 99, 235, 0.3); } 50% { box-shadow: 0 0 30px rgba(37, 99, 235, 0.7), 0 0 50px rgba(37, 99, 235, 0.4); } }
+
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-glow { animation: glow 2s ease-in-out infinite; }
+
+/* Timeline Styles - Education */
+.timeline { position: relative; padding: 20px 0; }
+.timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #2563eb 0%, #1e40af 50%, #1e3a8a 100%); transform: translateX(-50%); }
+.timeline-item { margin-bottom: 50px; position: relative; }
+.timeline-item:nth-child(odd) .timeline-content { margin-left: 0; margin-right: auto; padding-right: 60px; }
+.timeline-item:nth-child(even) .timeline-content { margin-left: auto; margin-right: 0; padding-left: 60px; }
+.timeline-item .timeline-marker { position: absolute; left: 50%; top: 0; width: 40px; height: 40px; background: #2563eb; border: 4px solid black; border-radius: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; z-index: 10; }
+.timeline-item .timeline-marker i { color: white; font-size: 20px; }
+.timeline-content { width: 50%; background: gradient-to-br from-gray-800 to-gray-850 border border-gray-700 rounded-xl shadow-lg p-6 transition all 0.3s ease; }
+.timeline-content:hover { transform: translateY(-5px); }
+.timeline-content:hover .timeline-badge { box-shadow: 0 0 15px rgba(37, 99, 235, 0.6), inset 0 0 15px rgba(37, 99, 235, 0.2); }
+.timeline-date { font-size: 14px; font-weight: 600; color: #2563eb; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+.timeline-title { font-size: 22px; font-weight: 700; color: white; margin-bottom: 8px; }
+.timeline-subtitle { font-size: 14px; color: #9ca3af; margin-bottom: 12px; }
+.timeline-details { font-size: 14px; color: #d1d5db; line-height: 1.6; margin-bottom: 10px; }
+.timeline-badge { display: inline-block; background: rgba(37, 99, 235, 0.2); color: #60a5fa; padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-right: 6px; margin-top: 8px; border: 1px solid #2563eb; transition: box-shadow 0.3s ease; }
+
+/* Experience Card Styles */
+.experience-card {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+  border: 2px solid rgba(37, 99, 235, 0.3);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.1);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  backdrop-filter: blur(10px);
+}
+
+.experience-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(37, 99, 235, 0.6);
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.25);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(37, 99, 235, 0.08) 100%);
+}
+
+.timeline-date {
+  font-size: 12px;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.timeline-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.timeline-subtitle {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* SVG Timeline Container */
+svg {
+  filter: drop-shadow(0 10px 30px rgba(37, 99, 235, 0.2));
+}
+
+/* Stagger animation for cards */
+.stagger-item {
+  animation: fadeInUp 0.8s ease-out backwards;
+  opacity: 0;
+}
+
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+
+/* Modal Styles */
+@keyframes modalIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+#citytourModal:not(.hidden) > div { animation: modalIn 0.3s ease-out forwards; }
+
+#citytourModal:not(.hidden) { display: flex; }
+
+/* Modal scrollbar styling */
+#citytourModal > div::-webkit-scrollbar { width: 8px; }
+#citytourModal > div::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); }
+#citytourModal > div::-webkit-scrollbar-thumb { background: rgba(37, 99, 235, 0.5); border-radius: 4px; }
+#citytourModal > div::-webkit-scrollbar-thumb:hover { background: rgba(37, 99, 235, 0.7); }
+
+@media (max-width: 768px) {
+  .timeline::before { left: 20px; }
+  .timeline-item:nth-child(odd) .timeline-content, .timeline-item:nth-child(even) .timeline-content { width: 100%; margin-left: 60px !important; margin-right: 0 !important; padding-right: 0 !important; padding-left: 0 !important; }
+  .timeline-item .timeline-marker { left: 20px; }
+}

@@ -1,511 +1,591 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    
+    <!-- Importing Inter and Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- Script -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
 
-  <!-- Example: Importing Inter and Poppins -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;700&display=swap"
-    rel="stylesheet" />
+    <title>Maizatul Mokhtar - Portfolio</title>
+  </head>
 
-  <title>Personal Portfolio</title>
-</head>
-
-<body class="bg-black text-white" style="font-family: 'Poppins', sans-serif">
-  <div class="min-h-screen flex flex-col">
-    <!-- Navbar -->
-    <header class="bg-black shadow-md py-4 px-6 flex items-center justify-between">
-      <span class="text-2xl font-bold text-blue-700">Maizatul Mokhtar</span>
-      <nav class="space-x-6 text-gray-300 font-medium" id="navbar">
-        <button class="tablink hover:text-blue-700 transition active" data-tab="home">
-          Home
-        </button>
-        <button class="tablink hover:text-blue-700 transition" data-tab="education">
-          Education
-        </button>
-        <button class="tablink hover:text-blue-700 transition" data-tab="experiences">
-          Experiences
-        </button>
-        <button class="tablink hover:text-blue-700 transition" data-tab="projects">
-          Projects
-        </button>
-        <button class="tablink hover:text-blue-700 transition" data-tab="contact">
-          Contact
-        </button>
+  <body class="bg-gradient-to-b from-blue-950 to-black text-white">
+    <header class="bg-black shadow-md py-4 px-6 sticky top-0 z-50 border-b border-gray-800">
+      <div class="flex items-center justify-between max-w-7xl mx-auto">
+        <span class="text-xl sm:text-2xl font-bold text-blue-700">Maizatul Mokhtar</span>
+        <button id="mobileMenuBtn" class="md:hidden text-gray-300 hover:text-blue-700 transition text-2xl"><i class="fas fa-bars"></i></button>
+        <nav class="hidden md:flex space-x-6 text-gray-300 font-medium">
+          <a href="#home" class="scroll-spy hover:text-blue-700 transition active" data-section="home">Home</a>
+          <a href="#education" class="scroll-spy hover:text-blue-700 transition" data-section="education">Education</a>
+          <a href="#experiences" class="scroll-spy hover:text-blue-700 transition" data-section="experiences">Experiences</a>
+          <a href="#projects" class="scroll-spy hover:text-blue-700 transition" data-section="projects">Projects</a>
+          <a href="#contact" class="scroll-spy hover:text-blue-700 transition" data-section="contact">Contact</a>
+        </nav>
+      </div>
+      <nav id="mobileMenu" class="hidden md:hidden mt-4 flex flex-col space-y-3 text-gray-300 font-medium bg-gray-900 p-4 rounded-lg">
+        <a href="#home" class="scroll-spy hover:text-blue-700 transition active" data-section="home">Home</a>
+        <a href="#education" class="scroll-spy hover:text-blue-700 transition" data-section="education">Education</a>
+        <a href="#experiences" class="scroll-spy hover:text-blue-700 transition" data-section="experiences">Experiences</a>
+        <a href="#projects" class="scroll-spy hover:text-blue-700 transition" data-section="projects">Projects</a>
+        <a href="#contact" class="scroll-spy hover:text-blue-700 transition" data-section="contact">Contact</a>
       </nav>
     </header>
 
-    <!-- Main Content Area -->
-    <main class="flex flex-col md:flex-row min-h-screen">
-  <!-- Left Image -->
-  <div class="md:w-1/2 flex items-center justify-center py-10">
-    <img src="home.jpg" alt="Profile"
-      class="w-[40rem] h-[40rem] md:w-[20rem] md:h-[20rem] rounded-full object-cover border-4 border-black shadow-lg" />
-  </div>
+    <main>
+      <section id="home" class="section flex flex-col lg:flex-row items-center justify-center px-4 sm:px-6 py-20">
+        <div class="w-full lg:w-1/2 flex items-center justify-center mb-10 lg:mb-0 animate-slide-left">
+          <img src="assets/img/profile.jpg" alt="Profile" class="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full object-cover border-2 border-blue-500 shadow-lg animate-float animate-glow transition duration-300" />
+        </div>
+        <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start px-4 sm:px-6 animate-slide-right">
+          <div class="text-center lg:text-left max-w-2xl">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-3">Hi, it's <span class="text-blue-700">Maizatul</span></h1>
+            <h3 class="text-lg sm:text-2xl lg:text-3xl font-bold mb-4">I'm a <span class="text-blue-700">Junior Full Stack Developer</span></h3>
+            <p class="text-sm sm:text-base mb-6 leading-relaxed text-gray-300">Junior Software Developer experienced in developing enterprise web applications using PHP and Laravel. Contributed to ERP accounting systems through payment gateway integration, workflow automation, and UI/UX enhancements. Skilled in HTML, CSS, Java Springboot, C++, PHP Vanilla and Laravel, JavaScript, jQuery, Alpine.js, AJAX, API integration, and database management. CPRE-FL and CTFL certified with a strong interest in building efficient, user-friendly systems.</p>
+            <div class="flex justify-center lg:justify-start gap-4 sm:gap-6 mt-6 mb-6 flex-wrap">
+              <a href="https://www.linkedin.com/in/maizatul-mokhtar-1135aa295" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center shadow-md hover:scale-110 hover:shadow-xl transition hover:bg-blue-700"><i class="fab fa-linkedin text-white text-lg"></i></a>
+              <a href="mailto:maizatulmokhtar85@gmail.com" class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center shadow-md hover:scale-110 hover:shadow-xl transition hover:bg-red-700"><i class="fas fa-envelope text-white text-lg"></i></a>
+              <a href="https://github.com/MaizatulMokhtar" target="_blank" class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center shadow-md hover:scale-110 hover:shadow-xl transition hover:bg-gray-600"><i class="fab fa-github text-white text-lg"></i></a>
+            </div>
+            <a href="#contact" class="inline-block bg-black text-white px-6 py-2 rounded-full border-2 border-blue-700 hover:bg-blue-700 transition w-full sm:w-auto text-center">Contact Me</a>
+          </div>
+        </div>
+      </section>
 
-  <!-- Right Content (Tabs) -->
-  <div class="md:w-1/2 flex flex-col items-start px-6 py-10">
-        <!-- Home Tab -->
-        <section id="home" class="tab-content">
-          <div class="home-content text-center md:text-left max-w-xl mt-20">
-            <h1 class="text-3xl md:text-5xl font-bold mb-3">
-              Hi, it's <span class="text-blue-700">Maizatul</span>
-            </h1>
-            <h3 class="typing-text text-xl md:text-2xl font-bold mb-4">
-              I'm a
-              <span class="text-blue-700">Junior Full Stack Developer</span>
-            </h3>
-            <p class="mb-6">
-              Skilled in HTML, CSS, JavaScript, PHP, and Laravel, with academic experience in Java
-              and C++. Certified in CPRE-FL and CTFL from MSTB, I’m passionate about
-              software quality and building responsive, user-friendly
-              websites. I’m adaptable, detail-oriented, and thrive in
-              collaborative environments where I can learn and contribute.
-            </p>
-            <div class="social-icons">
-              <div class="flex justify-start gap-6 mt-6 mb-6">
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/maizatul-mokhtar-1135aa295" target="_blank"
-                  class="w-12 h-12 rounded-full bg-blue-200 text-white flex items-center justify-center shadow-md hover:scale-110 transition">
-                  <img src="assets/img/linkedin.svg" alt="LinkedIn" class="w-6 h-6" />
-                </a>
-
-                <!-- Gmail -->
-                <a href="mailto:maizatulmokhtar85@gmail.com"
-                  class="w-12 h-12 rounded-full bg-white text-white flex items-center justify-center shadow-md hover:scale-110 transition">
-                  <img src="assets/img/gmail.svg" alt="InstGmailagram" class="w-6 h-6" />
-                </a>
-
-                <!-- Instagram -->
-                <a href="https://instagram.com/myzatul.mokhtar" target="_blank"
-                  class="w-12 h-12 rounded-full bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 text-white flex items-center justify-center shadow-md hover:scale-110 transition">
-                  <img src="assets/img/instagram.svg" alt="Instagram" class="w-6 h-6" />
-                </a>
+      <section id="education" class="section flex flex-col items-center px-4 sm:px-6 py-20">
+        <div class="w-full max-w-6xl mx-auto">
+          <h2 class="text-4xl sm:text-5xl font-bold text-blue-700 mb-16 text-center animate-fade-in">Education Journey</h2>
+          <div class="timeline">
+            <div class="timeline-item stagger-item">
+              <div class="timeline-marker"><i class="fas fa-graduation-cap"></i></div>
+              <div class="timeline-content">
+                <div class="timeline-date">2019 - 2021</div>
+                <div class="timeline-title">Matriculation in Science & Computer</div>
+                <div class="timeline-subtitle">College Matriculation of Pahang (KmPh)</div>
+                <div class="timeline-details">
+                  <p>Pre-university program combining Science and Computer subjects. Built programming fundamentals and advanced scientific knowledge.</p>
+                </div>
+                <div>
+                  <span class="timeline-badge">CGPA: 2.98</span>
+                </div>
               </div>
+            </div>
 
-              <!-- Contact me -->
-              <button data-tab="contact"
-                class="inline-block bg-black text-white px-6 py-2 rounded-full border-2 border-blue-700 hover:bg-blue-700 transition">
-                Contact Me
-              </button>
+            <div class="timeline-item stagger-item">
+              <div class="timeline-marker"><i class="fas fa-university"></i></div>
+              <div class="timeline-content">
+                <div class="timeline-date">2021 - 2025</div>
+                <div class="timeline-title">Bachelor of Information Systems Engineering</div>
+                <div class="timeline-subtitle">Universiti Teknologi MARA (UiTM)</div>
+                <div class="timeline-details">
+                  <p>Completed degree in Information Systems Engineering with expertise in software development, systems design, and IT project management. Hands-on experience with full-stack development, database design, and modern web technologies.</p>
+                </div>
+                <div>
+                  <span class="timeline-badge">CGPA: 3.25</span>
+                  <span class="timeline-badge">Graduated 2nd Upper Class Honors</span>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Education Tab -->
-        <section id="education" class="tab-content hidden">
-          <h2 class="text-3xl font-bold text-blue-700 mb-6">Education</h2>
-
-          <div class="space-y-8">
-            <!-- High School -->
-            <div class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group">
-              <!-- Timeline Dot -->
-              <div class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
-                <button onclick="openModal('coursesModal')" class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
-                  See Courses
-                </button>
-                <button onclick="openModal('certModal')" class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
-                  See Certificate
-                </button>
-                <div
-                  class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
-                  <button>
-                    <a href="assets/docs/spm.PDF" target="_blank"
-                      class="block px-4 py-2 bg-blue-700 text-white/ hover:bg-blue-800"> See Certificate </a>
-                  </button>
-                </div>
-              </div>
-
-              <!-- SPM -->
-              <h3 class="text-xl font-semibold text-white mb-1">
-                SPM – Science Stream
-              </h3>
-              <div class="flex justify-between text-sm text-gray-400">
-                <span>SMK Bandar Tasik Puteri</span>
-                <span>2014 - 2018</span>
-              </div>
-              <p class="mt-2 text-sm text-blue-400">SPM: 2A- 3B+ 1C+ 1C 2D</p>
-            </div>
-          </div>
-
-          <!-- Matriculation -->
-          <div class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group">
-            <div class="absolute w-3 h-3 bg-blue-700 rounded-full left-[-7px] top-1/2 transform -translate-y-1/2">
-            </div>
-
-            <div class="absolute top-3 right-3 z-10">
-              <button onclick="toggleDropdown(this)" class="text-gray-400 hover:text-white text-2xl leading-none">
-                &#x22EE;
-              </button>
-              <div class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
-                <button onclick="openModal('coursesModal')" class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
-                  See Courses
-                </button>
-                <button onclick="openModal('certModal')" class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
-                  See Certificate
-                </button>
-                <div
-                  class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
-                  <button>
-                    <a href="assets/docs/matrics.PDF" target="_blank"
-                      class="block px-4 py-2 bg-blue-700 text-white/ hover:bg-blue-800"> See Certificate </a>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <h3 class="text-xl font-semibold text-white mb-1">
-              Matriculation in Science and Computer
-            </h3>
-            <div class="flex justify-between text-sm text-gray-400">
-              <span>College Matriculation of Pahang (KmPh)</span>
-              <span>2019 - 2020</span>
-            </div>
-            <p class="mt-2 text-sm text-blue-400">CGPA: 2.98</p>
-          </div>
-
-          <!-- Degree -->
-          <div class="relative pl-6 border-l-4 border-blue-700 bg-gray-900 p-6 rounded-lg shadow-md group">
-            <div class="absolute w-3 h-3 bg-blue-700 rounded-full left-[-7px] top-1/2 transform -translate-y-1/2">
-            </div>
-
-            <div class="absolute top-3 right-3 z-10">
-              <button onclick="toggleDropdown(this)" class="text-gray-400 hover:text-white text-2xl leading-none">
-                &#x22EE;
-              </button>
-              <div class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
-                <button onclick="openModal('coursesModal')" class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
-                  See Courses
-                </button>
-                <button onclick="openModal('certModal')" class="block px-4 py-2 hover:bg-blue-700 w-full text-left">
-                  See Certificate
-                </button>
-                <div
-                  class="hidden dropdown-menu bg-gray-800 text-white text-sm rounded shadow-lg absolute right-0 mt-2">
-                  <button>
-                    <a href="assets/docs/uitm.pdf" target="_blank"
-                      class="block px-4 py-2 bg-blue-700 text-white/ hover:bg-blue-800"> See Certificate </a>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <h3 class="text-xl font-semibold text-white mb-1">
-              Bachelor of Information Systems Engineering
-            </h3>
-            <div class="flex justify-between text-sm text-gray-400">
-              <span>Universiti Teknologi MARA (UiTM)</span>
-              <span>2020 - 2024</span>
-            </div>
-            <p class="mt-2 text-sm text-blue-400">CGPA: 3.25</p>
-          </div>
-
-        </section>
-
-        <!-- Experiences -->
-        <section id="experiences" class="tab-content hidden">
-          <h2 class="text-3xl font-bold text-blue-700 mb-6">Experiences</h2>
-
-          <!-- Grid container for 2 cards per row -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-
-            <!-- Jr Full Stack -->
-            <div x-data="{ open: false, scopeOpen: false, skillsOpen: false }" class="relative h-full">
-              <div class="bg-white shadow-md hover:shadow-xl transition-shadow duration-300 rounded-2xl p-6 flex flex-col justify-between border border-gray-100 h-full">
-                <div class="mb-2">
-                  <h3 class="text-lg font-semibold text-blue-700 tracking-tight">Junior Full Stack Developer</h3>
-                  <p class="text-sm text-gray-500 mt-1">Alphia ventures Sdn Bhd</p>
-                  <p class="text-xs text-gray-400">March 2025 – Current</p>
-                </div>
-                <button @click="open = true" class="self-end text-blue-600 hover:text-blue-800 text-xl mt-4"
-                  title="View job details">
-                  &rarr;
-                </button>
-              </div>
-
-              <!-- Modal -->
-              <div x-show="open" x-transition
-                class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-                style="display: none;">
-                <div @click.away="open = false"
-                  class="bg-white rounded-xl shadow-lg p-6 max-w-md w-full relative max-h-[80vh] overflow-y-auto">
-                  <button @click="open = false"
-                    class="absolute top-3 right-4 text-gray-500 hover:text-red-500 text-xl">&times;</button>
-
-                  <h3 class="text-lg font-semibold text-blue-700 mb-1">Alphia Ventures Sdn Bhd</h3>
-                  <p class="italic text-xs text-gray-700 mb-4">
-                    Currently working as a Junior Full Stack Developer at Alphia Ventures Sdn Bhd, where I’m involved in
-                    developing and
-                    maintaining web and mobile-integrated solutions. My role spans across backend, frontend, performance
-                    optimization, and API integration to support dynamic and responsive digital platforms. </p>
-
-                  <!-- Job Scope Section -->
-                  <button @click="scopeOpen = !scopeOpen"
-                    class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
-                    <span x-text="scopeOpen ? 'Hide Job Scope' : 'Show Job Scope'"></span>
-                  </button>
-
-                  <div x-show="scopeOpen" x-transition class="mt-3 grid grid-cols-2 gap-4 text-sm text-gray-700">
-                    <div>
-                      <ul class="list-disc pl-5">
-                        <li>Developed and maintained full-stack applications using Laravel and Tailwind CSS.
-                        </li>
-                        <li>Contributed to mobile app preparation, including backend support and API readiness.</li>
-                        <li>Worked with WordPress, handling customization and plugin integration.</li>
-                        <li>Integrated and tested RESTful APIs for mobile app connectivity using Postman.</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <ul class="list-disc pl-5">
-                        <li>Implemented SEO improvements and optimized website load performance.</li>
-                        <li>Utilized Git and GitHub for version control and collaboration.</li>
-                        <li>Managed hosting and deployment using cPanel.</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <hr class="border border-gray-300 mt-3 mb-3">
-
-                  <!-- Skills Section -->
-                  <button @click="skillsOpen = !skillsOpen"
-                    class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
-                    <span x-text="skillsOpen ? 'Hide Skills' : 'Gained Skills'"></span>
-                  </button>
-
-                  <div x-show="skillsOpen" x-transition class="mt-3 grid grid-cols-2 gap-4 text-sm text-gray-700">
-                    <div>
-                      <strong class="block text-gray-900 mb-1">Frontend Development</strong>
-                      <ul class="list-disc pl-5">
-                        <li>JavaScript</li>
-                        <li>Alpine.js</li>
-                        <li>Tailwind CSS</li>
-                        <li>AJAX</li>
-                      </ul>
-
-                      <strong class="block text-gray-900 mt-4 mb-1">Backend Development</strong>
-                      <ul class="list-disc pl-5">
-                        <li>Laravel</li>
-                        <li>REST API development</li>
-                        <li>MySQL</li>
-                      </ul>
-
-                      <strong class="block text-gray-900 mt-4 mb-1">Testing</strong>
-                      <ul class="list-disc pl-5">
-                        <li>Manual Testing</li>
-                        <li>Regression Testing</li>
-                        <li>White Box & Black Box Testing</li>
-
-                      </ul>
-                    </div>
-
-                    <div>
-                      <strong class="block text-gray-900 mb-1">Frameworks & Tools</strong>
-                      <ul class="list-disc pl-5">
-                        <li>Laravel</li>
-                        <li>Tailwind CSS</li>
-                        <li>Alpine.js</li>
-                        <li>WordPress</li>
-                        <li>Git & GitHub</li>
-                        <li>cPanel</li>
-                        <li>PHPMyAdmin</li>
-                      </ul>
-
-                      <strong class="block text-gray-900 mt-4 mb-1">Performance & SEO</strong>
-                      <ul class="list-disc pl-5">
-                        <li>Page speed optimization</li>
-                        <li>Metadata setup</li>
-                        <li>SEO tagging</li>
-                      </ul>
-
-                      <strong class="block text-gray-900 mt-4 mb-1">Testing & DevOps</strong>
-                      <ul class="list-disc pl-5">
-                        <li>Postman</li>
-                        <li>Deployment via cPanel</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-
+      <section id="experiences" class="section flex flex-col items-center px-4 sm:px-6 py-20">
+        <div class="w-full max-w-6xl mx-auto">
+          <h2 class="text-4xl sm:text-5xl font-bold text-blue-700 mb-16 text-center animate-fade-in">Work Experiences</h2>
+          <div class="timeline">
             <!-- Internship -->
-            <div x-data="{ open: false, scopeOpen: false, skillsOpen: false }" class="relative h-full">
-              <div class="bg-white shadow-md hover:shadow-xl transition-shadow duration-300 rounded-2xl p-6 flex flex-col justify-between border border-gray-100 h-full">
-                <div class="mb-2">
-                  <h3 class="text-lg font-semibold text-blue-700 tracking-tight">Software Developer Intern</h3>
-                  <p class="text-sm text-gray-500 mt-1">HeiTech Padu Berhad</p>
-                  <p class="text-xs text-gray-400">March 2024 – March 2025</p>
+            <div class="timeline-item stagger-item">
+              <div class="timeline-marker"><i class="fas fa-code"></i></div>
+              <div class="timeline-content">
+                <div class="timeline-date">MARCH 2024 - MARCH 2025</div>
+                <div class="timeline-title">Software Developer Intern</div>
+                <div class="timeline-subtitle">HeiTech Padu Berhad</div>
+                <div class="mt-4">
+                  <p class="font-semibold text-green-300 mb-2">Job Scope:</p>
+                  <ul class="text-sm text-gray-300 space-y-1 ml-4">
+                    <li>• Contributed to internal system development</li>
+                    <li>• Participated in frontend and backend development</li>
+                    <li>• Designed and executed manual test cases</li>
+                    <li>• Reported bugs and assisted in UAT</li>
+                  </ul>
                 </div>
-                <button @click="open = true" class="self-end text-blue-600 hover:text-blue-800 text-xl mt-4"
-                  title="View job details">
-                  &rarr;
-                </button>
-              </div>
-
-              <!-- Modal -->
-              <div x-show="open" x-transition
-                class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-                style="display: none;">
-                <div @click.away="open = false"
-                  class="bg-white rounded-xl shadow-lg p-6 max-w-md w-full relative max-h-[80vh] overflow-y-auto">
-                  <button @click="open = false"
-                    class="absolute top-3 right-4 text-gray-500 hover:text-red-500 text-xl">&times;</button>
-
-                  <h3 class="text-lg font-semibold text-blue-700 mb-1">HeiTech Padu Berhad</h3>
-                  <p class="italic text-xs text-gray-700 mb-4">
-                    Completed a 1-year internship as a Software Engineer Intern at HeiTech Padu Berhad, contributing to
-                    both system development and manual testing.
-                    Gained hands-on experience in PHP, JavaScript, and MySQL while supporting UI design and executing
-                    test cases for a partner-facing internal system.
-                  </p>
-
-                  <!-- Job Scope Section -->
-                  <button @click="scopeOpen = !scopeOpen"
-                    class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
-                    <span x-text="scopeOpen ? 'Hide Job Scope' : 'Show Job Scope'"></span>
-                  </button>
-
-                  <div x-show="scopeOpen" x-transition class="mt-3 grid grid-cols-2 gap-4 text-sm text-gray-700">
-                    <div>
-                      <ul class="list-disc pl-5">
-                        <li>Contributed to the development of an internal system used by the company and its partners.
-                        </li>
-                        <li>Participated in both frontend and backend development using PHP, JavaScript, and SQL.</li>
-                        <li>Designed and executed manual test cases to ensure system reliability and functionality.</li>
-                        <li>Reported bugs, validated feature requirements, and assisted in user acceptance testing
-                          (UAT).</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <ul class="list-disc pl-5">
-                        <li>Gained hands-on experience across the full software development lifecycle (SDLC).</li>
-                        <li>Collaborated with cross-functional teams to improve system quality and performance.</li>
-                        <li>Strengthened skills in problem-solving, system logic, and code debugging.</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <hr class="border border-gray-300 mt-3 mb-3">
-
-                  <!-- Skills Section -->
-                  <button @click="skillsOpen = !skillsOpen"
-                    class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
-                    <span x-text="skillsOpen ? 'Hide Skills' : 'Gained Skills'"></span>
-                  </button>
-
-                  <div x-show="skillsOpen" x-transition class="mt-3 grid grid-cols-2 gap-4 text-sm text-gray-700">
-                    <div>
-                      <strong class="block text-gray-900 mb-1">Frontend Development</strong>
-                      <ul class="list-disc pl-5">
-                        <li>HTML5 & CSS3</li>
-                        <li>JavaScript</li>
-                        <li>Bootstrap</li>
-                        <li>jQuery</li>
-                      </ul>
-
-                      <strong class="block text-gray-900 mt-4 mb-1">Backend Development</strong>
-                      <ul class="list-disc pl-5">
-                        <li>PHP</li>
-                        <li>MySQL</li>
-                        <li>Laravel Blade (templating)</li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <strong class="block text-gray-900 mb-1">Tools & Platforms</strong>
-                      <ul class="list-disc pl-5">
-                        <li>PHPMyAdmin</li>
-                        <li>Git</li>
-                        <li>VS Code</li>
-                        <li>Chrome DevTools</li>
-                      </ul>
-
-                      <strong class="block text-gray-900 mt-4 mb-1">Design & Testing</strong>
-                      <ul class="list-disc pl-5">
-                        <li>Figma</li>
-                        <li>Canva</li>
-                        <li>Manual Testing</li>
-                        <li>User Acceptance Testing (UAT)</li>
-                        <li>Test Cases and Documentation</li>
-                      </ul>
-                    </div>
+                <div class="mt-4">
+                  <p class="font-semibold text-green-300 mb-2">Skills Gained:</p>
+                  <div class="text-sm text-gray-300 space-y-2">
+                    <div><span class="text-green-400">Frontend:</span> HTML5, CSS3, JavaScript, Bootstrap</div>
+                    <div><span class="text-green-400">Backend:</span> PHP, MySQL, Laravel Blade</div>
+                    <div><span class="text-green-400">Testing:</span> Manual Testing, UAT, Figma</div>
                   </div>
                 </div>
               </div>
             </div>
 
+            <!-- Permanent Job -->
+            <div class="timeline-item stagger-item">
+              <div class="timeline-marker"><i class="fas fa-briefcase"></i></div>
+              <div class="timeline-content">
+                <div class="timeline-date">MARCH 2025 - PRESENT</div>
+                <div class="timeline-title">Junior Full Stack Developer</div>
+                <div class="timeline-subtitle">Alphia Ventures Sdn Bhd</div>
+                <div class="mt-4">
+                  <p class="font-semibold text-blue-300 mb-2">Job Scope:</p>
+                  <ul class="text-sm text-gray-300 space-y-1 ml-4">
+                    <li>• Developed and maintained full-stack applications using Laravel and Tailwind CSS</li>
+                    <li>• Contributed to mobile app preparation and API readiness</li>
+                    <li>• Worked with WordPress customization and plugin integration</li>
+                    <li>• Integrated and tested RESTful APIs using Postman</li>
+                    <li>• Implemented SEO improvements and optimized performance</li>
+                  </ul>
+                </div>
+                <div class="mt-4">
+                  <p class="font-semibold text-blue-300 mb-2">Skills Gained:</p>
+                  <div class="text-sm text-gray-300 space-y-2">
+                    <div><span class="text-blue-400">Frontend:</span> JavaScript, Alpine.js, Tailwind CSS</div>
+                    <div><span class="text-blue-400">Backend:</span> Laravel, REST API, MySQL</div>
+                    <div><span class="text-blue-400">Tools:</span> Git, GitHub, cPanel, PHPMyAdmin</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
+      <section id="projects" class="section flex flex-col items-center px-4 sm:px-6 py-20">
+        <div class="w-full max-w-6xl mx-auto">
+          <h2 class="text-4xl sm:text-5xl font-bold text-blue-700 mb-12 text-center animate-fade-in">Featured Projects</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- MM Sport Point -->
+            <div class="stagger-item bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-700 card-hover flex flex-col">
+              <div class="relative h-64 bg-gray-900 overflow-hidden group">
+                <div class="slideshow relative w-full h-full" data-project="badminton">
+                  <img src="assets/img/badminton/1.jpg" alt="MM Sport Point" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-100" />
+                  <img src="assets/img/badminton/2.jpg" alt="MM Sport Point" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                </div>
+                <button class="slideshow-prev absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+                <button class="slideshow-next absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+              </div>
+              <div class="p-6 flex flex-col justify-between flex-1">
+                <div>
+                  <h3 class="text-lg font-bold text-yellow-400 mb-2">MM SPORT POINT Booking System</h3>
+                  <p class="text-sm text-gray-300 mb-4">Booking system with dual interfaces for customers to reserve courts and admins to manage availability, pricing, and bookings. Features real-time scheduling, payment processing, and user account management</p>
+                  <p class="text-xs text-gray-300 mb-4">MM Sport Point Jasin</p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="text-xs bg-yellow-700 text-white px-2 py-1 rounded-full">Java Springboot</span>
+                  <span class="text-xs bg-yellow-700 text-white px-2 py-1 rounded-full">Bootstrap</span>
+                  <span class="text-xs bg-yellow-700 text-white px-2 py-1 rounded-full">MySQL</span>
+                </div>
+                </div>
+                <a href="#" id="mmsportViewBtn" class="text-yellow-400 hover:text-yellow-300 text-sm font-semibold">View Project </a>
+              </div>
+            </div>
 
-        <section id="projects" class="tab-content hidden">
-          <div class="project-content text-center md:text-left max-w-xl mt-20">
-            <h2 class="text-2xl font-semibold mb-4">Projects</h2>
-            <p>Project descriptions...</p>
+            <!-- SRDA -->
+            <div class="stagger-item bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-700 card-hover flex flex-col">
+              <div class="relative h-64 bg-gray-900 overflow-hidden group">
+                <div class="slideshow relative w-full h-full" data-project="srda">
+                  <img src="assets/img/srda/1.png" alt="Sales Report" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-100" />
+                  <img src="assets/img/srda/2.png" alt="Sales Report" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                  <img src="assets/img/srda/3.png" alt="Sales Report" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                  <img src="assets/img/srda/4.png" alt="Sales Report" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                </div>
+                <button class="slideshow-prev absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+                <button class="slideshow-next absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+              </div>
+              <div class="p-6 flex flex-col justify-between flex-1">
+                <div>
+                  <h3 class="text-lg font-bold text-purple-400 mb-2">Sales Report & Data Analysis</h3>
+                  <p class="text-sm text-gray-300 mb-4">Developed an interactive dashboard that display real-time data analysis and reports of sales pipeline and engagement activity for partners during the internship in HeiTech Padu Berhad</p>
+                  <p class="text-xs text-gray-300 mb-4">HeiTech Padu Berhad</p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="text-xs bg-purple-700 text-white px-2 py-1 rounded-full">PHP Vanilla</span>
+                    <span class="text-xs bg-purple-700 text-white px-2 py-1 rounded-full">Bootstrap CSS</span>
+                    <span class="text-xs bg-purple-700 text-white px-2 py-1 rounded-full">mySQL</span>
+                    <span class="text-xs bg-purple-700 text-white px-2 py-1 rounded-full">JavaScript</span>
+                    <span class="text-xs bg-purple-700 text-white px-2 py-1 rounded-full">jQuery</span>
+                    <span class="text-xs bg-purple-700 text-white px-2 py-1 rounded-full">AJAX</span>
+                    <span class="text-xs bg-purple-700 text-white px-2 py-1 rounded-full">Chart.js</span>
+                  </div>
+                </div>
+                <a href="#" id="srdaViewBtn" class="text-purple-400 hover:text-purple-300 text-sm font-semibold">View Project </a>
+              </div>
+            </div>
+
+            <!-- City eSIM -->
+            <div class="stagger-item bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-700 card-hover flex flex-col">
+              <div class="relative h-64 bg-gray-900 overflow-hidden group">
+                <div class="slideshow relative w-full h-full" data-project="esim">
+                  <img src="assets/img/esim/1.png" alt="City eSIM" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-100" />
+                  <img src="assets/img/esim/2.png" alt="City eSIM" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                  <img src="assets/img/esim/3.jpg" alt="City eSIM" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                  <img src="assets/img/esim/4.jpg" alt="City eSIM" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                  <img src="assets/img/esim/5.jpg" alt="City eSIM" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                </div>
+                <button class="slideshow-prev absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+                <button class="slideshow-next absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+              </div>
+              <div class="p-6 flex flex-col justify-between flex-1">
+                <div>
+                  <h3 class="text-lg font-bold text-blue-400 mb-2">eSIM City Tour</h3>
+                  <p class="text-sm text-gray-300 mb-4">e-Commerce platform for eSIM packages with dual customer and admin interfaces. Customers browse/purchase regional/global plans, activate eSIMs in real-time, and manage subscriptions. Admins manage inventory, pricing, promotions, monitor orders, track transactions, and generate sales reports. Supports both B2B business customers and B2C individual travelers</p>
+                  <p class="text-xs text-gray-300 mb-4">Alphia Ventures Sdn Bhd</p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="text-xs bg-blue-700 text-white px-2 py-1 rounded-full">PHP Laravel</span>
+                    <span class="text-xs bg-blue-700 text-white px-2 py-1 rounded-full">Tailwind CSS</span>
+                    <span class="text-xs bg-blue-700 text-white px-2 py-1 rounded-full">mySQL</span>
+                    <span class="text-xs bg-blue-700 text-white px-2 py-1 rounded-full">Javascript</span>
+                    <span class="text-xs bg-blue-700 text-white px-2 py-1 rounded-full">Alpine.js</span>
+                    <span class="text-xs bg-blue-700 text-white px-2 py-1 rounded-full">jQuery</span>
+                    <span class="text-xs bg-blue-700 text-white px-2 py-1 rounded-full">AJAX</span>
+                    <span class="text-xs bg-blue-700 text-white px-2 py-1 rounded-full">Chart.js</span>
+                  </div>
+                </div>
+                <a href="#" id="esimViewBtn" class="text-blue-400 hover:text-blue-300 text-sm font-semibold">View Project </a>
+              </div>
+            </div>
+
+            <!-- City Tour -->
+            <div class="stagger-item bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-700 card-hover flex flex-col">
+              <div class="relative h-64 bg-gray-900 overflow-hidden group">
+                <div class="slideshow relative w-full h-full" data-project="citytour">
+                  <img src="assets/img/citytour/1.png" alt="City Tour" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-100" />
+                  <img src="assets/img/citytour/2.png" alt="City Tour" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                  <img src="assets/img/citytour/3.png" alt="City Tour" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                  <img src="assets/img/citytour/4.png" alt="City Tour" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                  <img src="assets/img/citytour/5.png" alt="City Tour" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                  <img src="assets/img/citytour/6.png" alt="City Tour" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                  <img src="assets/img/citytour/7.png" alt="City Tour" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                  <img src="assets/img/citytour/8.png" alt="City Tour" class="slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+
+                </div>
+                <button class="slideshow-prev absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+                <button class="slideshow-next absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+              </div>
+              <div class="p-6 flex flex-col justify-between flex-1">
+                <div>
+                  <h3 class="text-lg font-bold text-orange-400 mb-2">City Tour ERP</h3>
+                  <p class="text-sm text-gray-300 mb-4">ERP accounting system with integrated CRM for travel agencies. Centralizes booking operations with client payment collection that auto-reflects to accounting. Features payment gateway integration, automated payment reminders, workflow automation via N8N, and AI-powered data parsing to JSON. Includes full accounting module such are, Chart of Accounts, payment vouchers, receipt vouchers, invoices, and financial reporting</p>
+                  <p class="text-xs text-gray-300 mb-4">Alphia Ventures Sdn Bhd</p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="text-xs bg-orange-700 text-white px-2 py-1 rounded-full">PHP Laravel</span>
+                    <span class="text-xs bg-orange-700 text-white px-2 py-1 rounded-full">Tailwind CSS</span>
+                    <span class="text-xs bg-orange-700 text-white px-2 py-1 rounded-full">mySQL</span>
+                    <span class="text-xs bg-orange-700 text-white px-2 py-1 rounded-full">Javascript</span>
+                    <span class="text-xs bg-orange-700 text-white px-2 py-1 rounded-full">Alpine.js</span>
+                    <span class="text-xs bg-orange-700 text-white px-2 py-1 rounded-full">jQuery</span>
+                    <span class="text-xs bg-orange-700 text-white px-2 py-1 rounded-full">AJAX</span>
+                  </div>
+                </div>
+                <a href="#" id="citytourViewBtn" class="text-orange-400 hover:text-orange-300 text-sm font-semibold">View Project </a>
+              </div>
+            </div>
           </div>
-        </section>
-        <section id="contact" class="tab-content hidden">
-          <div class="contact-content text-center md:text-left max-w-xl mt-20">
-            <h2 class="text-2xl font-semibold mb-4">Contact</h2>
-            <p>Contact me at maizatulmokhtar85@gmail.com</p>
+        </div>
+      </section>
+
+      <section id="contact" class="section flex flex-col items-center justify-center px-4 sm:px-6 py-20">
+        <div class="w-full max-w-4xl mx-auto text-center">
+          <h2 class="text-4xl sm:text-5xl font-bold text-blue-700 mb-12 animate-fade-in">Get In Touch</h2>
+          <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
+            <div class="stagger-item flex items-center gap-3">
+              <i class="fas fa-envelope text-blue-500 text-2xl"></i>
+              <a href="mailto:maizatulmokhtar85@gmail.com" class="text-blue-400 hover:text-blue-300 text-sm sm:text-base transition">maizatulmokhtar85@gmail.com</a>
+            </div>
+            <div class="hidden sm:block text-gray-600">|</div>
+            <div class="stagger-item flex items-center gap-3">
+              <i class="fab fa-linkedin text-blue-600 text-2xl"></i>
+              <a href="https://www.linkedin.com/in/maizatul-mokhtar-1135aa295" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm sm:text-base transition">LinkedIn Profile</a>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
+
+      <footer class="bg-gray-900 py-6 text-center text-gray-400 border-t border-gray-800">
+        <p>&copy; 2026 Maizatul Mokhtar. All rights reserved.</p>
+      </footer>
+      <!-- City Tour ERP Modal -->
+      <div id="citytourModal" class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center hidden">
+        <div class="bg-gray-900 rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto border border-gray-700">
+          <!-- Modal Header -->
+          <div class="sticky top-0 bg-gray-900 flex items-center justify-between px-6 py-4 border-b border-gray-700">
+            <h2 class="text-2xl font-bold text-orange-400">City Tour ERP</h2>
+            <button id="citytourModalClose" class="text-gray-400 hover:text-white text-2xl"><i class="fas fa-times"></i></button>
+          </div>
+
+          <!-- Modal Content -->
+          <div class="p-6">
+            <!-- Slideshow Section -->
+            <div class="relative h-72 bg-gray-800 rounded-lg overflow-hidden group mb-8">
+              <div class="modal-slideshow relative w-full h-full">
+                <img src="assets/img/citytour/1.png" alt="City Tour" class="modal-slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-100" />
+                <img src="assets/img/citytour/2.png" alt="City Tour" class="modal-slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                <img src="assets/img/citytour/3.png" alt="City Tour" class="modal-slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                <img src="assets/img/citytour/4.png" alt="City Tour" class="modal-slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                <img src="assets/img/citytour/5.png" alt="City Tour" class="modal-slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                <img src="assets/img/citytour/6.png" alt="City Tour" class="modal-slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                <img src="assets/img/citytour/7.png" alt="City Tour" class="modal-slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                <img src="assets/img/citytour/8.png" alt="City Tour" class="modal-slideshow-img w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+              </div>
+              <button class="modal-slideshow-prev absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full transition z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+              <button class="modal-slideshow-next absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full transition z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+            </div>
+
+            <!-- Project Info -->
+            <div class="mb-8">
+              <p class="text-sm text-gray-400 mb-2"><span class="text-blue-400">Company:</span> Alphia Ventures Sdn Bhd</p>
+              <p class="text-gray-300 mb-6">ERP accounting system with integrated CRM for travel agencies. Centralizes booking operations (flights, hotels, visas) with client payment collection that auto-reflects to accounting. Features payment gateway integration, automated payment reminders, workflow automation via N8N, and AI-powered data parsing to JSON. Includes full accounting module: Chart of Accounts, payment vouchers, receipt vouchers, invoices, and financial reporting.</p>
+            </div>
+            
+            <!-- Tech Stack -->
+            <div class="mb-10">
+              <p class="text-sm text-gray-400 mb-3"><span class="text-blue-400">Tech Stack:</span></p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs bg-orange-700 text-white px-3 py-1 rounded-full">PHP Laravel</span>
+                <span class="text-xs bg-orange-700 text-white px-3 py-1 rounded-full">Tailwind CSS</span>
+                <span class="text-xs bg-orange-700 text-white px-3 py-1 rounded-full">MySQL</span>
+                <span class="text-xs bg-orange-700 text-white px-3 py-1 rounded-full">JavaScript</span>
+                <span class="text-xs bg-orange-700 text-white px-3 py-1 rounded-full">Alpine.js</span>
+                <span class="text-xs bg-orange-700 text-white px-3 py-1 rounded-full">jQuery</span>
+                <span class="text-xs bg-orange-700 text-white px-3 py-1 rounded-full">AJAX</span>
+              </div>
+            </div>
+
+            <!-- Contributions Section -->
+            <div class="mb-8">
+              <h3 class="text-xl font-bold text-orange-400 mb-6">My Contributions</h3>
+              <div class="space-y-6">
+                <div>
+                  <p class="text-sm font-semibold text-white mb-2">Payment gateway integration</p>
+                  <p class="text-xs text-gray-400 leading-relaxed">Integrated multiple payment gateways that are Hesabe and MyFatoorah to enable clients to pay directly within the system. Each gateway required custom payload handling and distinct callback implementations for reliable payment verification and status synchronization. Implemented automatic reconciliation where payments instantly sync to the accounting module, eliminating manual entry and reducing data entry errors</p>
+                </div>
+
+                <div>
+                  <p class="text-sm font-semibold text-white mb-2">Workflow automation (N8N)</p>
+                  <p class="text-xs text-gray-400 leading-relaxed">Designed and implemented automated workflows using N8N, where end users uploaded the tasks from the WhatsApp which using the Resayil integration. This reduced manual upload of tasks into the system, hence improved operational efficiency across the system by 70%</p>
+                </div>
+
+                <div>
+                  <p class="text-sm font-semibold text-white mb-2">Accounting module development</p>
+                  <p class="text-xs text-gray-400 leading-relaxed">Built comprehensive accounting functionality including receipt vouchers, invoices, payment links and financial reports. The module auto-generates accounting entries from booking transactions, ensuring real-time financial accuracy and simplifying the reconciliation process</p>
+                </div>
+
+                <div>
+                  <p class="text-sm font-semibold text-white mb-2">Payment reminder</p>
+                  <p class="text-xs text-gray-400 leading-relaxed">Built payment schedule reminder to ease the operational activities of collecting payment from clients. The reminder is send using the WhatsApp with Resayil integration and automatically send using the cron-job service</p>
+                </div>
+
+                <div>
+                  <p class="text-sm font-semibold text-white mb-2">Design and enhance UI/UX</p>
+                  <p class="text-xs text-gray-400 leading-relaxed">Took part in designing the layout of the system for better user experience. Managed to reduce the load time of Task page by refactoring the workflow of processing task into an invoice by implementing Task Detail page. Improve more than 80& of load time on the Task page and improved the smoothness of operational activities</p>
+                </div>
+
+                <div>
+                  <p class="text-sm font-semibold text-white mb-2">Testing</p>
+                  <p class="text-xs text-gray-400 leading-relaxed">Participated in testing phase such are, train and test the AI model for parsing the data of task and stores into database. Implement vigorous manual, black-box, white-box testing to ensure system efficiency in end user point of view whilst ensuring the code to be scalable and maintainable</p>
+                </div>
+
+                <div>
+                  <p class="text-sm font-semibold text-white mb-2">Deploy to Production</p>
+                  <p class="text-xs text-gray-400 leading-relaxed">Responsible to deploy the features and big fix into production and staging through cPanel hostings</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MM SPORT POINT Modal Template -->
+      <div id="mmsportModal" class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center hidden">
+        <div class="bg-gray-900 rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto border border-gray-700">
+          <div class="sticky top-0 bg-gray-900 flex items-center justify-between px-6 py-4 border-b border-gray-700">
+            <h2 class="text-2xl font-bold text-yellow-400">MM SPORT POINT Booking System</h2>
+            <button id="mmsportModalClose" class="text-gray-400 hover:text-white text-2xl"><i class="fas fa-times"></i></button>
+          </div>
+
+          <div class="p-6">
+            <div class="relative h-72 bg-gray-800 rounded-lg overflow-hidden group mb-8">
+              <div class="modal-slideshow-mmsport relative w-full h-full">
+                <img src="assets/img/badminton/1.jpg" alt="MM Sport" class="modal-slideshow-img-mmsport w-full h-full object-contain absolute transition-opacity duration-500 opacity-100" />
+                <img src="assets/img/badminton/2.jpg" alt="MM Sport" class="modal-slideshow-img-mmsport w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+              </div>
+              <button class="modal-slideshow-prev-mmsport absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full transition z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+              <button class="modal-slideshow-next-mmsport absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full transition z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+            </div>
+
+            <div class="mb-8">
+              <p class="text-sm text-gray-400 mb-2"><span class="text-blue-400">Company:</span> MM Sport Point Jasin</p>
+              <p class="text-gray-300 mb-6">Booking system with dual interfaces for customers to reserve courts and admins to manage availability, pricing, and bookings. Features real-time scheduling, payment processing, and user account management</p>
+            </div>
+
+            <div class="mb-10">
+              <p class="text-sm text-gray-400 mb-3"><span class="text-blue-400">Tech Stack:</span></p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs bg-yellow-700 text-white px-3 py-1 rounded-full">Java Springboot</span>
+                <span class="text-xs bg-yellow-700 text-white px-3 py-1 rounded-full">Bootstrap</span>
+                <span class="text-xs bg-yellow-700 text-white px-3 py-1 rounded-full">MySQL</span>
+              </div>
+            </div>
+
+            <div class="mb-8">
+              <h3 class="text-xl font-bold text-yellow-400 mb-6">My Contributions</h3>
+              <div class="space-y-6">
+                <div>
+                  <p class="text-sm font-semibold text-white mb-2">Documenter</p>
+                  <p class="text-xs text-gray-400 leading-relaxed">Document and design the architecture and diagrams of the system</p>
+                </div>
+
+                <div>
+                  <p class="text-sm font-semibold text-white mb-2">UI/UX designer</p>
+                  <p class="text-xs text-gray-400 leading-relaxed">Participated in designed the layout of the system to ensure best user experiences</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SRDA Modal Template -->
+      <div id="srdaModal" class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center hidden">
+        <div class="bg-gray-900 rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto border border-gray-700">
+          <div class="sticky top-0 bg-gray-900 flex items-center justify-between px-6 py-4 border-b border-gray-700">
+            <h2 class="text-2xl font-bold text-purple-400">Sales Report & Data Analysis</h2>
+            <button id="srdaModalClose" class="text-gray-400 hover:text-white text-2xl"><i class="fas fa-times"></i></button>
+          </div>
+
+          <div class="p-6">
+            <div class="relative h-72 bg-gray-800 rounded-lg overflow-hidden group mb-8">
+              <div class="modal-slideshow-srda relative w-full h-full">
+                <img src="assets/img/srda/1.png" alt="SRDA" class="modal-slideshow-img-srda w-full h-full object-contain absolute transition-opacity duration-500 opacity-100" />
+                <img src="assets/img/srda/2.png" alt="SRDA" class="modal-slideshow-img-srda w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                <img src="assets/img/srda/3.png" alt="SRDA" class="modal-slideshow-img-srda w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                <img src="assets/img/srda/4.png" alt="SRDA" class="modal-slideshow-img-srda w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+              </div>
+              <button class="modal-slideshow-prev-srda absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full transition z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+              <button class="modal-slideshow-next-srda absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full transition z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+            </div>
+
+            <div class="mb-8">
+              <p class="text-sm text-gray-400 mb-2"><span class="text-blue-400">Company:</span> HeiTech Padu Berhad</p>
+              <p class="text-gray-300 mb-6">Developed an interactive dashboard that display real-time data analysis and reports of sales pipeline and engagement activity for partners during the internship in HeiTech Padu Berhad</p>
+            </div>
+
+            <div class="mb-10">
+              <p class="text-sm text-gray-400 mb-3"><span class="text-blue-400">Tech Stack:</span></p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs bg-purple-700 text-white px-3 py-1 rounded-full">PHP Vanilla</span>
+                <span class="text-xs bg-purple-700 text-white px-3 py-1 rounded-full">Bootstrap CSS</span>
+                <span class="text-xs bg-purple-700 text-white px-3 py-1 rounded-full">MySQL</span>
+                <span class="text-xs bg-purple-700 text-white px-3 py-1 rounded-full">JavaScript</span>
+                <span class="text-xs bg-purple-700 text-white px-3 py-1 rounded-full">jQuery</span>
+                <span class="text-xs bg-purple-700 text-white px-3 py-1 rounded-full">AJAX</span>
+                <span class="text-xs bg-purple-700 text-white px-3 py-1 rounded-full">Chart.js</span>
+              </div>
+            </div>
+
+            <div class="mb-8">
+              <h3 class="text-xl font-bold text-purple-400 mb-6">My Contributions</h3>
+              <div class="space-y-6">
+                <div>
+                  <p class="text-sm font-semibold text-white mb-2">Developed reports and analysis</p>
+                  <p class="text-xs text-gray-400 leading-relaxed">Analysis data of the sales pipelines and partners activities and came up with reports using real-time data tha treflected onto the system</p>
+                </div>
+
+                <div>
+                  <p class="text-sm font-semibold text-white mb-2">Designed the UI/UX of the system</p>
+                  <p class="text-xs text-gray-400 leading-relaxed">Ensures the data and reports are well positioned to reduce confusion and improve readibility for end users</p>
+                </div>
+
+                <div>
+                  <p class="text-sm font-semibold text-white mb-2">Documenter</p>
+                  <p class="text-xs text-gray-400 leading-relaxed">Designed the architecture and diagrams of the system and documented it for the supervision under the pretext of final year project</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- eSIM CITY TOUR Modal Template -->
+      <div id="esimModal" class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center hidden">
+        <div class="bg-gray-900 rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto border border-gray-700">
+          <div class="sticky top-0 bg-gray-900 flex items-center justify-between px-6 py-4 border-b border-gray-700">
+            <h2 class="text-2xl font-bold text-blue-400">eSIM City Tour</h2>
+            <button id="esimModalClose" class="text-gray-400 hover:text-white text-2xl"><i class="fas fa-times"></i></button>
+          </div>
+
+          <div class="p-6">
+            <div class="relative h-72 bg-gray-800 rounded-lg overflow-hidden group mb-8">
+              <div class="modal-slideshow-esim relative w-full h-full">
+                <img src="assets/img/esim/1.png" alt="eSIM" class="modal-slideshow-img-esim w-full h-full object-contain absolute transition-opacity duration-500 opacity-100" />
+                <img src="assets/img/esim/2.png" alt="eSIM" class="modal-slideshow-img-esim w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                <img src="assets/img/esim/3.jpg" alt="eSIM" class="modal-slideshow-img-esim w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                <img src="assets/img/esim/4.jpg" alt="eSIM" class="modal-slideshow-img-esim w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+                <img src="assets/img/esim/5.jpg" alt="eSIM" class="modal-slideshow-img-esim w-full h-full object-contain absolute transition-opacity duration-500 opacity-0" />
+              </div>
+              <button class="modal-slideshow-prev-esim absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full transition z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+              <button class="modal-slideshow-next-esim absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full transition z-10"><i class="fas fa-chevron-right text-sm"></i></button>
+            </div>
+
+            <div class="mb-8">
+              <p class="text-sm text-gray-400 mb-2"><span class="text-blue-400">Company:</span> Alphia Ventures Sdn Bhd</p>
+              <p class="text-gray-300 mb-6">e-Commerce platform for eSIM packages with dual customer and admin interfaces. Customers browse/purchase regional/global plans, activate eSIMs in real-time, and manage subscriptions. Admins manage inventory, pricing, promotions, monitor orders, track transactions, and generate sales reports. Supports both B2B business customers and B2C individual travelers</p>
+            </div>
+
+            <div class="mb-10">
+              <p class="text-sm text-gray-400 mb-3"><span class="text-blue-400">Tech Stack:</span></p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs bg-blue-700 text-white px-3 py-1 rounded-full">PHP Laravel</span>
+                <span class="text-xs bg-blue-700 text-white px-3 py-1 rounded-full">Tailwind CSS</span>
+                <span class="text-xs bg-blue-700 text-white px-3 py-1 rounded-full">MySQL</span>
+                <span class="text-xs bg-blue-700 text-white px-3 py-1 rounded-full">JavaScript</span>
+                <span class="text-xs bg-blue-700 text-white px-3 py-1 rounded-full">Alpine.js</span>
+                <span class="text-xs bg-blue-700 text-white px-3 py-1 rounded-full">jQuery</span>
+                <span class="text-xs bg-blue-700 text-white px-3 py-1 rounded-full">AJAX</span>
+                <span class="text-xs bg-blue-700 text-white px-3 py-1 rounded-full">Chart.js</span>
+              </div>
+            </div>
+
+            <div class="mb-8">
+              <h3 class="text-xl font-bold text-blue-400 mb-6">My Contributions</h3>
+              <div class="space-y-6">
+                <div>
+                  <p class="text-sm font-semibold text-white mb-2">Integrated Payment Gateway</p>
+                  <p class="text-xs text-gray-400 leading-relaxed">Managed to implement Hesabe gateway into the system while handling the decoded payload and callbacks to ensure data confidentiality</p>
+                </div>
+
+                <div>
+                  <p class="text-sm font-semibold text-white mb-2">Improve Security</p>
+                  <p class="text-xs text-gray-400 leading-relaxed">Implemented OTP verification for sign-in users to reduce payment fraud and system abuse during the payment transaction</p>
+                </div>
+
+                <div>
+                  <p class="text-sm font-semibold text-white mb-2">API Integration</p>
+                  <p class="text-xs text-gray-400 leading-relaxed">Prepare and test the APIs for mobile app development, as well as for web applications and third-party services</p>
+                </div>
+
+                <div>
+                  <p class="text-sm font-semibold text-white mb-2">Deploy to Production</p>
+                  <p class="text-xs text-gray-400 leading-relaxed">Responsible to deploy the features and big fix into production and staging through cPanel hostings</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
-  </div>
 
-  <!-- JavaScript for Tabs -->
-  <script>
-    const tabLinks = document.querySelectorAll(".tablink");
-    const tabContents = document.querySelectorAll(".tab-content");
-
-    tabLinks.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        // Remove active class from all buttons
-        tabLinks.forEach((b) =>
-          b.classList.remove("text-blue-700", "font-bold", "active")
-        );
-        // Add active class to clicked button
-        btn.classList.add("text-blue-700", "font-bold", "active");
-
-        // Hide all content
-        tabContents.forEach((content) => content.classList.add("hidden"));
-        // Show clicked tab content
-        document.getElementById(btn.dataset.tab).classList.remove("hidden");
-      });
-    });
-  </script>
-  <!-- JS: Dropdown toggle -->
-  <script>
-    function toggleDropdown(btn) {
-      const menu = btn.nextElementSibling;
-      const allMenus = document.querySelectorAll(".dropdown-menu");
-      allMenus.forEach((m) => m !== menu && m.classList.add("hidden"));
-      menu.classList.toggle("hidden");
-    }
-
-    window.addEventListener("click", (e) => {
-      if (
-        !e.target.matches("button") &&
-        !e.target.closest(".dropdown-menu")
-      ) {
-        document
-          .querySelectorAll(".dropdown-menu")
-          .forEach((menu) => menu.classList.add("hidden"));
-      }
-    });
-
-    function openModal(modalId) {
-      // Your modal display logic
-      alert(`Open modal: ${modalId}`);
-    }
-  </script>
-</body>
-
+    <!-- External Scripts -->
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
